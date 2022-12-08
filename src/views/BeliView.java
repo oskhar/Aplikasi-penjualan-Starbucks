@@ -38,15 +38,18 @@ public class BeliView extends JFrame implements ActionListener {
 
         // Set back button
         back = new JButton("<< Back");
-        layoutLabel(back, 10, 10, 100, 20);
+        back.setBounds(10, 10, 100, 20);
+        back.setBorder(null);
+        back.setFocusable(false);
+        back.setContentAreaFilled(false);
+        back.addActionListener(this);
+        back.setFont(new Font("Arial", Font.PLAIN, 15));
         add(back);
 
         // Set latar component
         latar = new JLabel(new ImageIcon(pathImg + "komponen1.png"));
         latar.setBounds(60, 310, 860, 260);
         add(latar);
-
-        // Set button
 
         // Frame painting
         tambahTombolAksi();

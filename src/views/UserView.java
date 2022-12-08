@@ -18,8 +18,8 @@ public class UserView extends JFrame implements ActionListener{
     // ATRIBUTE
     UserController control = new UserController();
     String cookie = control.model.cookie;
-    FileInputStream in;
     Properties prop = new Properties();
+    FileInputStream in;
     JLabel latar1;
     JLabel latar2;
     JLabel latar3;
@@ -89,6 +89,7 @@ public class UserView extends JFrame implements ActionListener{
         bukaTambahAkun.setBounds(860, 510, 120, 20);
         bukaTambahAkun.addActionListener(this);
         bukaTambahAkun.setBackground(Color.white);
+        bukaTambahAkun.setBorder(null);
         latar1.add(bukaTambahAkun);
 
         // Set button
@@ -96,6 +97,7 @@ public class UserView extends JFrame implements ActionListener{
         bukaEditPassword.setBounds(860, 485, 120, 20);
         bukaEditPassword.addActionListener(this);
         bukaEditPassword.setBackground(Color.white);
+        bukaEditPassword.setBorder(null);
         latar1.add(bukaEditPassword);
 
         // Set box input
@@ -137,6 +139,7 @@ public class UserView extends JFrame implements ActionListener{
         notifArea = new JLabel("");
         notifArea.setBounds(400, 20, 200, 20);
         notifArea.setFont(new Font("Arial", Font.BOLD, 18));
+        notifArea.setBorder(null);
         latar1.add(notifArea);
 
     }
@@ -223,6 +226,7 @@ public class UserView extends JFrame implements ActionListener{
         notifArea = new JLabel("");
         notifArea.setBounds(400, 20, 200, 20);
         notifArea.setFont(new Font("Arial", Font.BOLD, 18));
+        notifArea.setBorder(null);
         latar2.add(notifArea);
 
     }
@@ -287,6 +291,7 @@ public class UserView extends JFrame implements ActionListener{
         notifArea = new JLabel("");
         notifArea.setBounds(200, 20, 400, 20);
         notifArea.setFont(new Font("Arial", Font.BOLD, 18));
+        notifArea.setBorder(null);
         latar3.add(notifArea);
 
     }
@@ -312,10 +317,7 @@ public class UserView extends JFrame implements ActionListener{
         if (control.verUser(s1, s2)){
             try {
                 
-                in = new FileInputStream(cookie);
-                prop.load(in);
                 in.close();
-
                 FileOutputStream out = new FileOutputStream(cookie);
                 prop.setProperty("user", s1);
                 prop.setProperty("pass", s2);

@@ -1,22 +1,28 @@
 package views;
 
 import javax.swing.*;
-
 import controllers.MenuController;
-
 import java.awt.*;
 import java.awt.event.*;
+import java.io.*;
+import java.util.Properties;
 
 public class MenuView extends JFrame implements ActionListener {
 
     // ATRIBUTE
+    Properties prop = new Properties();
+    FileInputStream in;
     JButton[] tombol = new JButton[8];
     JButton[] label = new JButton[8];
+    JButton logout;
+    JButton cart;
+    JButton prdk;
     JLabel background;
     JLabel judul;
 
     MenuController control = new MenuController();
     String pathImg = control.model.locPathImg;
+    String cookie = control.model.cookie;
     String img;
     int width;
     int height;
@@ -44,18 +50,39 @@ public class MenuView extends JFrame implements ActionListener {
         judul.setForeground(new Color(31, 33, 48));
         add(judul);
 
+        // Set back button
+        logout = new JButton("<< Log Out");
+        logout.setBounds(890, 510, 100, 20);
+        logout.setBorder(null);
+        logout.setFocusable(false);
+        logout.setContentAreaFilled(false);
+        logout.addActionListener(this);
+        logout.setFont(new Font("Arial", Font.PLAIN, 15));
+        add(logout);
+
+        // Set notif shoping cart
+        prdk = new JButton(new ImageIcon(pathImg + "prdk.png"));
+        layoutTombol(prdk, 957, 24, 13, 13);
+        if (checkCookie())
+            add(prdk);
+
+        // Set shoping cart
+        cart = new JButton(new ImageIcon(pathImg + "cart.png"));
+        cart.setLayout(null);
+        layoutTombol(cart, 950, 30, 20, 16);
+        add(cart);
+
         // Frame painting
         tambahButton();
         tambahLabel();
 
         // Set background
-        img = pathImg + "latar.jpg";
         setLayout(new BorderLayout());
-        background = new JLabel(new ImageIcon(img));
+        background = new JLabel(new ImageIcon(pathImg + "latar.jpg"));
         background.setLayout(new FlowLayout());
         add(background);
 
-        // Show frame
+        // Show
         setVisible(true);
 
     }
@@ -125,6 +152,25 @@ public class MenuView extends JFrame implements ActionListener {
         el.addActionListener(this);
 
     }
+    
+    // METHOD
+    public boolean checkCookie () {
+
+        // Variable
+        boolean hasil = false;
+
+        try {
+            in = new FileInputStream(cookie);
+            prop.load(in);
+            String u = prop.getProperty("beli");
+
+            if (!(u.equals("")))
+                hasil = true;
+
+        } catch (Exception ex) {System.out.println(ex);}
+        return hasil;
+
+    }
 
     // METHOD
     public static void main(String[] args) {
@@ -139,6 +185,20 @@ public class MenuView extends JFrame implements ActionListener {
         int i;
 
         // Check button
+        if (source == logout) {
+            try {
+                
+                FileOutputStream out = new FileOutputStream(cookie);
+                prop.setProperty("user", "");
+                prop.setProperty("pass", "");
+                prop.store(out, null);
+                out.close();
+
+                new UserView();
+                this.setVisible(false);
+
+            } catch (Exception ex) {System.out.println(ex);}
+        }
         for (i = 0; i < control.model.database.length ; i++) {
             if (source == tombol[i] || source == label[i])
                 control.changeSlide(this, i);
