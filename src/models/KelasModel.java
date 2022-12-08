@@ -30,8 +30,8 @@ public class KelasModel {
 
         // Variable
         config();
-        locPathImg = prop.getProperty("path") + "img/";
-        cookie = prop.getProperty("path") + "src/config/cookie.properties";
+        locPathImg = prop.getProperty("pathImg");
+        cookie = prop.getProperty("cookie");
         width = Integer.parseInt(prop.getProperty("width"));
         height = Integer.parseInt(prop.getProperty("height"));
         String url = prop.getProperty("url");
