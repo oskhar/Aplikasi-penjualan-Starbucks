@@ -4,10 +4,10 @@ package controllers;
 import models.UserModel;
 
 // KELAS
-public class UserController {
+public class UserController extends KelasController {
 
     // ATRIBUTE
-    public UserModel model;
+    public UserModel model = new UserModel();
     public String nama = "";
     public String alamat = "";
 
@@ -15,8 +15,30 @@ public class UserController {
     public UserController () {
 
         // Object
-        this.model = new UserModel();
+        this.cookie = model.cookie;
 
+    }
+
+    // METHOD
+    public void verAkun (JLabel objc, String s1, String s2) {
+
+        // Verification acount
+        if (verUser(s1, s2)){
+            try {
+                
+                setCookie("user", s1);
+                setCookie("pass", s2);
+                setCookie("nama", nama);
+                setCookie("alamat", alamat);
+
+            } catch (Exception ex) {System.out.println(ex);}
+            new MenuView();
+            this.setVisible(false);
+
+        }else{
+            objc.setText("Password atau Email salah");
+        
+        }
     }
 
     // METHOD

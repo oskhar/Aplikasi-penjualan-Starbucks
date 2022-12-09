@@ -20,6 +20,7 @@ public class BeliView extends JFrame implements ActionListener {
     JButton beli2;
     JButton tbh;
     JButton krn;
+    JButton prdk;
     JButton[] t = new JButton[4];
 
     String pathImg = control.model.locPathImg;
@@ -174,6 +175,14 @@ public class BeliView extends JFrame implements ActionListener {
         el.addActionListener(this);
 
     }
+    // METHOD
+    public void notifShoping () {
+        if (control.config()) {
+            prdk = new JButton(new ImageIcon(pathImg + "prdk.png"));
+            layoutTombol(prdk, 957, 24, 13, 13);
+            add(prdk);
+        }
+    }
 
     public static void main(String[] args) {
         int[] d = {0,1,2,3};
@@ -199,6 +208,15 @@ public class BeliView extends JFrame implements ActionListener {
         } else if (source == back) {
             new MenuView();
             this.setVisible(false);
+
+        } else if (source == beli1) {
+            control.setCookie(Integer.toString(data[0]), ank.getText());
+            new BayarView(control.data);
+            this.setVisible(false);
+
+        } else if (source == beli1) {
+            control.setCookie(Integer.toString(data[0]), ank.getText());
+            new BeliView(data);
 
         }
         

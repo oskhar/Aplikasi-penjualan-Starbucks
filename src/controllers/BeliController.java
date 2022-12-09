@@ -12,6 +12,7 @@ public class BeliController {
     public String data[][];
     Properties prop = new Properties();
     FileInputStream in;
+    FileOutputStream out;
     String cookie = model.cookie;
     String beli;
 
@@ -40,6 +41,7 @@ public class BeliController {
     // METHOD
     public void getCookie () {
 
+        // Variable
         int i;
         String[] ln = beli.split(",");
         data = new String[ln.length][2];
@@ -51,11 +53,30 @@ public class BeliController {
 
     }
 
+    public void setCookie (String s1, String s2) {
+
+        if (config())
+            beli = beli + "," + s1 + "=" + s2;
+        else
+            beli = s1 + "=" + s2;
+        
+        getCookie();
+        
+        try {
+            out = new FileOutputStream(cookie);
+            prop.setProperty("beli", beli);
+            prop.store(out, null);
+            out.close();
+
+        } catch (Exception ex) {System.out.println(ex);}
+
+    }
+
     // METHOD
     public void deleteCookie () {
         try {
             
-            FileOutputStream out = new FileOutputStream(cookie);
+            out = new FileOutputStream(cookie);
             prop.setProperty("beli", "");
             prop.store(out, null);
             out.close();

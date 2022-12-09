@@ -13,6 +13,8 @@ public class BayarView extends JFrame implements ActionListener {
     JButton logout;
     JButton cart;
     JButton prdk;
+    JButton clearAll;
+    JButton bayar;
     JLabel background;
     JLabel judul;
 
@@ -51,7 +53,7 @@ public class BayarView extends JFrame implements ActionListener {
 
         // Set back button
         logout = new JButton("<< Back");
-        logout.setBounds(890, 510, 100, 20);
+        logout.setBounds(10, 500, 100, 30);
         logout.setBorder(null);
         logout.setFocusable(false);
         logout.setContentAreaFilled(false);
@@ -59,18 +61,44 @@ public class BayarView extends JFrame implements ActionListener {
         logout.setFont(new Font("Arial", Font.PLAIN, 15));
         add(logout);
 
+        // Set clear button
+        clearAll = new JButton("Clear All");
+        clearAll.setBounds(130, 500, 100, 30);
+        clearAll.setBorder(null);
+        clearAll.setFont(new Font("Arial", Font.PLAIN, 15));
+        clearAll.setBackground(Color.red);
+        clearAll.setForeground(Color.white);
+        clearAll.setFocusable(false);
+        clearAll.addActionListener(this);
+        add(clearAll);
+
+        // Set clear button
+        bayar = new JButton("Bayar");
+        bayar.setBounds(240, 500, 100, 30);
+        bayar.setBorder(null);
+        bayar.setFont(new Font("Arial", Font.PLAIN, 15));
+        bayar.setBackground(Color.green);
+        bayar.setForeground(Color.white);
+        bayar.setFocusable(false);
+        bayar.addActionListener(this);
+        add(bayar);
+
         // Frame painting
         tambahPrdk();
+        aturBackground();
 
+        // Show
+        setVisible(true);
+
+    }
+
+    // METHOD
+    public void aturBackground () {
         // Set background
         setLayout(new BorderLayout());
         background = new JLabel(new ImageIcon(pathImg + "latar.jpg"));
         background.setLayout(new FlowLayout());
         add(background);
-
-        // Show
-        setVisible(true);
-
     }
 
     // METHOD
@@ -135,7 +163,12 @@ public class BayarView extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
+
+        // Object
+        Object source = e.getSource();
+
+        // Check button
+        if (source == clearAll) {}
         
     }
 

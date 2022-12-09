@@ -56,10 +56,7 @@ public class MenuView extends JFrame implements ActionListener {
         add(logout);
 
         // Set notif shoping cart
-        prdk = new JButton(new ImageIcon(pathImg + "prdk.png"));
-        layoutTombol(prdk, 957, 24, 13, 13);
-        if (control.checkCookie())
-            add(prdk);
+        notifShoping();
 
         // Set shoping cart
         cart = new JButton(new ImageIcon(pathImg + "cart.png"));
@@ -99,6 +96,15 @@ public class MenuView extends JFrame implements ActionListener {
             layoutTombol(tombol[i], penX+(193*j), penY, 100, 100);
             this.add(tombol[i]);
         
+        }
+    }
+
+    // METHOD
+    public void notifShoping () {
+        if (control.checkCookie("beli")) {
+            prdk = new JButton(new ImageIcon(pathImg + "prdk.png"));
+            layoutTombol(prdk, 957, 24, 13, 13);
+            add(prdk);
         }
     }
 
@@ -163,7 +169,8 @@ public class MenuView extends JFrame implements ActionListener {
         // Check button
         if (source == logout) {
 
-            control.deleteCookie();
+            control.deleteCookie("user");
+            control.deleteCookie("pass");
             new UserView();
             this.setVisible(false);
 

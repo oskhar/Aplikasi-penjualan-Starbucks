@@ -71,7 +71,7 @@ public class UserView extends JFrame implements ActionListener{
         setVisible(true);
         
         // Check cookie
-        checkCookie();
+        config();
 
     }
 
@@ -297,43 +297,11 @@ public class UserView extends JFrame implements ActionListener{
     }
 
     // METHOD
-    public void checkCookie () {
-        try {
+    public void config () {
 
-            in = new FileInputStream(cookie);
-            prop.load(in);
-            String u = prop.getProperty("user");
+        if (control.checkCookie("user"))
+            verAkun(notifArea, prop.getProperty("user"), prop.getProperty("pass"));
 
-            if (!(u.equals("")))
-                verAkun(prop.getProperty("user"), prop.getProperty("pass"));
-
-        } catch (Exception ex) {System.out.println(ex);}
-    }
-
-    // METHOD
-    public void verAkun (String s1, String s2) {
-
-        // Verification acount
-        if (control.verUser(s1, s2)){
-            try {
-                
-                in.close();
-                FileOutputStream out = new FileOutputStream(cookie);
-                prop.setProperty("user", s1);
-                prop.setProperty("pass", s2);
-                prop.setProperty("nama", control.nama);
-                prop.setProperty("alamat", control.alamat);
-                prop.store(out, null);
-                out.close();
-
-            } catch (Exception ex) {System.out.println(ex);}
-            new MenuView();
-            this.setVisible(false);
-
-        }else{
-            notifArea.setText("Password atau Email salah");
-        
-        }
     }
 
     @Override
