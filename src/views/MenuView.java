@@ -55,18 +55,16 @@ public class MenuView extends JFrame implements ActionListener {
         logout.setFont(new Font("Arial", Font.PLAIN, 15));
         add(logout);
 
-        // Set notif shoping cart
-        notifShoping();
-
         // Set shoping cart
         cart = new JButton(new ImageIcon(pathImg + "cart.png"));
         cart.setLayout(null);
         layoutTombol(cart, 950, 30, 20, 16);
-        add(cart);
+        add(cart, 0);
 
         // Frame painting
         tambahButton();
         tambahLabel();
+        notifShoping();
 
         // Set background
         setLayout(new BorderLayout());
@@ -96,15 +94,6 @@ public class MenuView extends JFrame implements ActionListener {
             layoutTombol(tombol[i], penX+(193*j), penY, 100, 100);
             this.add(tombol[i]);
         
-        }
-    }
-
-    // METHOD
-    public void notifShoping () {
-        if (control.checkCookie("beli")) {
-            prdk = new JButton(new ImageIcon(pathImg + "prdk.png"));
-            layoutTombol(prdk, 957, 24, 13, 13);
-            add(prdk);
         }
     }
 
@@ -152,6 +141,15 @@ public class MenuView extends JFrame implements ActionListener {
         el.setForeground(new Color(31, 33, 48));
         el.addActionListener(this);
 
+    }
+
+    // METHOD
+    public void notifShoping () {
+        if (control.checkCookie("beli")) {
+            prdk = new JButton(new ImageIcon(pathImg + "prdk.png"));
+            layoutTombol(prdk, 957, 24, 13, 13);
+            add(prdk, 1);
+        }
     }
 
     // METHOD

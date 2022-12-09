@@ -53,7 +53,7 @@ public class BayarView extends JFrame implements ActionListener {
 
         // Set back button
         logout = new JButton("<< Back");
-        logout.setBounds(10, 500, 100, 30);
+        logout.setBounds(10, 500, 80, 30);
         logout.setBorder(null);
         logout.setFocusable(false);
         logout.setContentAreaFilled(false);
@@ -63,10 +63,10 @@ public class BayarView extends JFrame implements ActionListener {
 
         // Set clear button
         clearAll = new JButton("Clear All");
-        clearAll.setBounds(130, 500, 100, 30);
+        clearAll.setBounds(115, 500, 100, 30);
         clearAll.setBorder(null);
         clearAll.setFont(new Font("Arial", Font.PLAIN, 15));
-        clearAll.setBackground(Color.red);
+        clearAll.setBackground(new Color(220, 53, 69));
         clearAll.setForeground(Color.white);
         clearAll.setFocusable(false);
         clearAll.addActionListener(this);
@@ -74,10 +74,10 @@ public class BayarView extends JFrame implements ActionListener {
 
         // Set clear button
         bayar = new JButton("Bayar");
-        bayar.setBounds(240, 500, 100, 30);
+        bayar.setBounds(230, 500, 100, 30);
         bayar.setBorder(null);
         bayar.setFont(new Font("Arial", Font.PLAIN, 15));
-        bayar.setBackground(Color.green);
+        bayar.setBackground(new Color(40, 167, 69));
         bayar.setForeground(Color.white);
         bayar.setFocusable(false);
         bayar.addActionListener(this);

@@ -1,5 +1,7 @@
 package controllers;
 
+import javax.swing.JLabel;
+
 // PUSTAKA
 import models.UserModel;
 
@@ -20,10 +22,14 @@ public class UserController extends KelasController {
     }
 
     // METHOD
-    public void verAkun (JLabel objc, String s1, String s2) {
+    public boolean verAkun (JLabel objc, String s1, String s2) {
+
+        // Variable
+        boolean hasil = false;
 
         // Verification acount
         if (verUser(s1, s2)){
+            hasil = true;
             try {
                 
                 setCookie("user", s1);
@@ -32,13 +38,12 @@ public class UserController extends KelasController {
                 setCookie("alamat", alamat);
 
             } catch (Exception ex) {System.out.println(ex);}
-            new MenuView();
-            this.setVisible(false);
 
         }else{
             objc.setText("Password atau Email salah");
         
         }
+        return hasil;
     }
 
     // METHOD

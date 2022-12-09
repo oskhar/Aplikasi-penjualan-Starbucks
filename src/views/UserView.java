@@ -300,7 +300,7 @@ public class UserView extends JFrame implements ActionListener{
     public void config () {
 
         if (control.checkCookie("user"))
-            verAkun(notifArea, prop.getProperty("user"), prop.getProperty("pass"));
+            control.verAkun(notifArea, prop.getProperty("user"), prop.getProperty("pass"));
 
     }
 
@@ -314,7 +314,10 @@ public class UserView extends JFrame implements ActionListener{
 
         // Check button
         if (source == submitLogin) {
-            verAkun(username.getText(), password.getText());
+            if (control.verAkun(notifArea, username.getText(), password.getText())) {
+                new MenuView();
+                this.setVisible(false);
+            }
 
         } else if (source == submitTambah) {
 

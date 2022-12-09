@@ -177,7 +177,7 @@ public class BeliView extends JFrame implements ActionListener {
     }
     // METHOD
     public void notifShoping () {
-        if (control.config()) {
+        if (control.checkCookie("")) {
             prdk = new JButton(new ImageIcon(pathImg + "prdk.png"));
             layoutTombol(prdk, 957, 24, 13, 13);
             add(prdk);
@@ -210,13 +210,16 @@ public class BeliView extends JFrame implements ActionListener {
             this.setVisible(false);
 
         } else if (source == beli1) {
-            control.setCookie(Integer.toString(data[0]), ank.getText());
-            new BayarView(control.data);
+            
+            String beliValue = control.manipString(Integer.toString(data[0]), ank.getText());
+            control.setCookie("beli", beliValue);
+
+            new BayarView(control.getData(beliValue));
             this.setVisible(false);
 
         } else if (source == beli1) {
-            control.setCookie(Integer.toString(data[0]), ank.getText());
-            new BeliView(data);
+            String beliValue = control.manipString(Integer.toString(data[0]), ank.getText());
+            control.setCookie("beli", beliValue);
 
         }
         
