@@ -8,6 +8,8 @@ public class UserController {
 
     // ATRIBUTE
     public UserModel model;
+    public String nama = "";
+    public String alamat = "";
 
     // CONSTRUCTOR
     public UserController () {
@@ -44,8 +46,11 @@ public class UserController {
 
         // Search data
         for (i = 0; i < model.database.length; i++) {
-            if (model.database[i][0].equals(user) && model.database[i][1].equals(pass))
+            if (model.database[i][0].equals(user) && model.database[i][1].equals(pass)){
+                nama = model.database[i][2];
+                alamat = model.database[i][3];
                 hasil = true;
+            }
 
         }
         return hasil;

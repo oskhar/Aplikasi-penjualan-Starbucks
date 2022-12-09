@@ -4,14 +4,10 @@ import javax.swing.*;
 import controllers.MenuController;
 import java.awt.*;
 import java.awt.event.*;
-import java.io.*;
-import java.util.Properties;
 
 public class MenuView extends JFrame implements ActionListener {
 
     // ATRIBUTE
-    Properties prop = new Properties();
-    FileInputStream in;
     JButton[] tombol = new JButton[8];
     JButton[] label = new JButton[8];
     JButton logout;
@@ -22,7 +18,6 @@ public class MenuView extends JFrame implements ActionListener {
 
     MenuController control = new MenuController();
     String pathImg = control.model.locPathImg;
-    String cookie = control.model.cookie;
     String img;
     int width;
     int height;
@@ -51,7 +46,7 @@ public class MenuView extends JFrame implements ActionListener {
         add(judul);
 
         // Set back button
-        logout = new JButton("<< Log Out");
+        logout = new JButton("<< Logout");
         logout.setBounds(890, 510, 100, 20);
         logout.setBorder(null);
         logout.setFocusable(false);
@@ -63,7 +58,7 @@ public class MenuView extends JFrame implements ActionListener {
         // Set notif shoping cart
         prdk = new JButton(new ImageIcon(pathImg + "prdk.png"));
         layoutTombol(prdk, 957, 24, 13, 13);
-        if (checkCookie())
+        if (control.checkCookie())
             add(prdk);
 
         // Set shoping cart
@@ -152,25 +147,6 @@ public class MenuView extends JFrame implements ActionListener {
         el.addActionListener(this);
 
     }
-    
-    // METHOD
-    public boolean checkCookie () {
-
-        // Variable
-        boolean hasil = false;
-
-        try {
-            in = new FileInputStream(cookie);
-            prop.load(in);
-            String u = prop.getProperty("beli");
-
-            if (!(u.equals("")))
-                hasil = true;
-
-        } catch (Exception ex) {System.out.println(ex);}
-        return hasil;
-
-    }
 
     // METHOD
     public static void main(String[] args) {
@@ -186,18 +162,11 @@ public class MenuView extends JFrame implements ActionListener {
 
         // Check button
         if (source == logout) {
-            try {
-                
-                FileOutputStream out = new FileOutputStream(cookie);
-                prop.setProperty("user", "");
-                prop.setProperty("pass", "");
-                prop.store(out, null);
-                out.close();
 
-                new UserView();
-                this.setVisible(false);
+            control.deleteCookie();
+            new UserView();
+            this.setVisible(false);
 
-            } catch (Exception ex) {System.out.println(ex);}
         }
         for (i = 0; i < control.model.database.length ; i++) {
             if (source == tombol[i] || source == label[i])

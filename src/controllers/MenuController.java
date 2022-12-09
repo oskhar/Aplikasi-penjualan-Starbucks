@@ -6,19 +6,18 @@ import views.BeliView;
 import views.MenuView;
 import views.UserView;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.util.Properties;
+
 // KELAS
 public class MenuController {
     
     // ATRIBUTE
-    public MenuModel model;
-
-    // CONSTRUCTOR
-    public MenuController () {
-
-        // Object
-        this.model = new MenuModel();
-
-    }
+    public MenuModel model = new MenuModel();
+    Properties prop = new Properties();
+    FileInputStream in;
+    String cookie = model.cookie;
 
     // METHOD
     public void changeSlide (MenuView objc, int angka) {
@@ -45,6 +44,38 @@ public class MenuController {
         new UserView();
         objc.setVisible(false);
 
+    }
+
+    // METHOD
+    public boolean checkCookie () {
+
+        // Variable
+        boolean hasil = false;
+
+        try {
+            in = new FileInputStream(cookie);
+            prop.load(in);
+            String u = prop.getProperty("beli");
+
+            if (!(u.equals("")))
+                hasil = true;
+
+        } catch (Exception ex) {System.out.println(ex);}
+        return hasil;
+
+    }
+
+    // METHOD
+    public void deleteCookie () {
+        try {
+            
+            FileOutputStream out = new FileOutputStream(cookie);
+            prop.setProperty("user", "");
+            prop.setProperty("pass", "");
+            prop.store(out, null);
+            out.close();
+
+        } catch (Exception ex) {System.out.println(ex);}
     }
 
 }

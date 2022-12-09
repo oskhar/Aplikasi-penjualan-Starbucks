@@ -321,6 +321,8 @@ public class UserView extends JFrame implements ActionListener{
                 FileOutputStream out = new FileOutputStream(cookie);
                 prop.setProperty("user", s1);
                 prop.setProperty("pass", s2);
+                prop.setProperty("nama", control.nama);
+                prop.setProperty("alamat", control.alamat);
                 prop.store(out, null);
                 out.close();
 
