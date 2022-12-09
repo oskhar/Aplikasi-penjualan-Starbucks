@@ -9,17 +9,12 @@ import javax.swing.*;
 import controllers.UserController;
 import java.awt.*;
 import java.awt.event.*;
-import java.io.*;
-import java.util.Properties;
 
 // KELAS
 public class UserView extends JFrame implements ActionListener{
 
     // ATRIBUTE
     UserController control = new UserController();
-    String cookie = control.model.cookie;
-    Properties prop = new Properties();
-    FileInputStream in;
     JLabel latar1;
     JLabel latar2;
     JLabel latar3;
@@ -300,7 +295,14 @@ public class UserView extends JFrame implements ActionListener{
     public void config () {
 
         if (control.checkCookie("user"))
-            control.verAkun(notifArea, prop.getProperty("user"), prop.getProperty("pass"));
+            if (control.verUser(control.getCookie("user"), control.getCookie("pass"))) {
+                new MenuView();
+                this.setVisible(false);
+
+            } else {
+                notifArea.setText("Password atau Email salah!");
+
+            }
 
     }
 

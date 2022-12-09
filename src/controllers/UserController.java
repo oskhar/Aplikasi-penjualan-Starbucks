@@ -47,24 +47,6 @@ public class UserController extends KelasController {
     }
 
     // METHOD
-    public boolean cekEmail (String email) {
-
-        // Variable
-        boolean hasil = false;
-        int i;
-
-        // Search data
-        for (i = 0; i < model.database.length; i++) {
-            if (model.database[i][0].equals(email))
-                hasil = true;
-
-        }
-
-        return hasil;
-
-    }
-
-    // METHOD
     public boolean verUser (String user, String pass) {
 
         // Variable
@@ -92,7 +74,7 @@ public class UserController extends KelasController {
         String data;
         boolean c1 = pass.length() >= 6;
         boolean c2 = passUlang.equals(pass);
-        boolean c3 = !(cekEmail(user));
+        boolean c3 = !(checkCookie(user));
         data = "'" + user + "', '" + pass + "', '" + nama + "', '" + alamat + "'";
 
         // Check validasi data
@@ -121,7 +103,7 @@ public class UserController extends KelasController {
         String hasil = "false";
         boolean c1 = pass.length() >= 6;
         boolean c2 = passUlang.equals(pass);
-        boolean c3 = cekEmail(email);
+        boolean c3 = checkCookie(email);
         String data = "pass='" + pass + "'";
         String lokasi = "email='" + email + "'";
         
@@ -143,11 +125,6 @@ public class UserController extends KelasController {
 
         return hasil;
 
-    }
-
-
-    public static void main (String[] s) {
-        new UserController();
     }
     
 }

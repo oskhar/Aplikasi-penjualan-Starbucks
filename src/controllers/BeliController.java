@@ -35,19 +35,40 @@ public class BeliController extends KelasController {
 
     public String manipString (String s1, String s2) {
 
+        // Variable
         String beli = getCookie("beli");
+        String[][] data = getData(beli);
+        boolean ada = false;
+        int i;
 
-        if (checkCookie("beli"))
+        for (i = 0; i < data.length; i++) {
+            if (s1.equals(data[i][0])) {
+                ada = true;
+                data[i][1] = Integer.toString(Integer.parseInt(s2) + Integer.parseInt(data[i][1]));
+            }
+        }
+
+        if (ada) {
+                
+            // Set temp variable
+            String[] temp = new String[data.length];
+            for (i = 0; i < data.length; i++) {
+                temp[i] = String.join("=", data[i]);
+            }
+
+            // Set beli
+            beli = String.join(",", temp);
+        
+        } else if (checkCookie("beli")) {
             beli = beli + "," + s1 + "=" + s2;
-        else
+
+        } else {
             beli = s1 + "=" + s2;
+
+        }
 
         return beli;
 
-    }
-
-    public static void main(String[] args) {
-        new BeliController();
     }
     
 }

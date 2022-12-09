@@ -27,6 +27,8 @@ public class KelasController {
     public void setCookie (String key, String value) {
         try {
             
+            in = new FileInputStream(cookie);
+            prop.load(in);
             out = new FileOutputStream(cookie);
             prop.setProperty(key, value);
             prop.store(out, null);
