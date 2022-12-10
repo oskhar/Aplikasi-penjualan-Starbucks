@@ -217,7 +217,7 @@ public class BeliView extends JFrame implements ActionListener {
             new BayarView(control.getData(beliValue));
             this.setVisible(false);
 
-        } else if (source == beli1) {
+        } else if (source == beli2) {
             String beliValue = control.manipString(Integer.toString(data[0]), ank.getText());
             control.setCookie("beli", beliValue);
 

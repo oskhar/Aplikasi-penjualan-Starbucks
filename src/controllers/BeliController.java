@@ -38,6 +38,7 @@ public class BeliController extends KelasController {
         // Variable
         String beli = getCookie("beli");
         String[][] data = getData(beli);
+        System.out.println(data.length);
         boolean ada = false;
         int i;
 

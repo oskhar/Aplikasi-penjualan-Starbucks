@@ -62,7 +62,7 @@ public class BayarController extends KelasController {
 
     public void bayar (String nama, String alamat, String hargaTot) {
 
-        String query = "nama='"+ nama +"',alamat='"+ alamat +"',hargaTot='"+ hargaTot +"'";
+        String query = "0,'"+ nama +"','"+ alamat +"','"+ hargaTot +"'";
         model.sqlInsert("riwayat", query);
     }
 

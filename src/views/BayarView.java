@@ -236,12 +236,19 @@ public class BayarView extends JFrame implements ActionListener {
 
             }
         }
-        if (source == bayar) {
+        if (source == bayar && !(control.sum(listHarga).equals("0"))) {
             control.bayar(
                 control.getCookie("nama"),
                 control.getCookie("alamat"),
-                control.getCookie(control.sum(listHarga))
-                );
+                control.sum(listHarga)
+            );
+            new PengirimanView(
+                control.getCookie("nama"),
+                control.getCookie("alamat"),
+                control.sum(listHarga)
+            );
+            control.deleteCookie("beli");
+            this.setVisible(false);
         }
         
     }
