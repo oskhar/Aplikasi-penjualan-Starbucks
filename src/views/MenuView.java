@@ -5,7 +5,7 @@ import controllers.MenuController;
 import java.awt.*;
 import java.awt.event.*;
 
-public class MenuView extends JFrame implements ActionListener {
+public class MenuView extends KelasView implements ActionListener {
 
     // ATRIBUTE
     JButton[] tombol = new JButton[8];
@@ -13,7 +13,6 @@ public class MenuView extends JFrame implements ActionListener {
     JButton logout;
     JButton cart;
     JButton prdk;
-    JLabel background;
     JLabel judul;
 
     MenuController control = new MenuController();
@@ -32,14 +31,11 @@ public class MenuView extends JFrame implements ActionListener {
         this.height = control.model.height;
 
         // Set container
-        setSize(width, height);
-        setLocationRelativeTo(null);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setLayout(new BorderLayout());
+        setContainer(width, height);
 
         // Set judul
         judul = new JLabel("STARBUCKS");
-        judul.setBounds(0, 40, 1000, 20);
+        judul.setBounds(0, 40, width, 20);
         judul.setHorizontalAlignment(JLabel.CENTER);
         judul.setFont(new Font("Arial", Font.BOLD, 18));
         judul.setForeground(new Color(31, 33, 48));
@@ -59,7 +55,7 @@ public class MenuView extends JFrame implements ActionListener {
         cart = new JButton(new ImageIcon(pathImg + "cart.png"));
         cart.setLayout(null);
         layoutTombol(cart, 950, 30, 20, 16);
-        add(cart, 0);
+        add(cart, 1);
 
         // Frame painting
         tambahButton();
@@ -67,10 +63,7 @@ public class MenuView extends JFrame implements ActionListener {
         notifShoping();
 
         // Set background
-        setLayout(new BorderLayout());
-        background = new JLabel(new ImageIcon(pathImg + "latar.jpg"));
-        background.setLayout(new FlowLayout());
-        add(background);
+        addBackground(pathImg + "latar.jpg");
 
         // Show
         setVisible(true);
@@ -148,7 +141,7 @@ public class MenuView extends JFrame implements ActionListener {
         if (control.checkCookie("beli")) {
             prdk = new JButton(new ImageIcon(pathImg + "prdk.png"));
             layoutTombol(prdk, 957, 24, 13, 13);
-            add(prdk, 1);
+            add(prdk, 0);
         }
     }
 
@@ -171,6 +164,18 @@ public class MenuView extends JFrame implements ActionListener {
             control.deleteCookie("pass");
             new UserView();
             this.setVisible(false);
+
+        } else if (source == cart || source == prdk) {
+
+            if (control.checkCookie("beli")) {
+                new BayarView(control.getData(control.getCookie("beli")));
+                this.setVisible(false);
+
+            } else {
+                new BayarView(new String[0][0]);
+                this.setVisible(false);
+            
+            }
 
         }
         for (i = 0; i < control.model.database.length ; i++) {

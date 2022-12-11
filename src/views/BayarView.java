@@ -5,7 +5,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class BayarView extends JFrame implements ActionListener {
+public class BayarView extends KelasView implements ActionListener {
 
     // ATRIBUTE
     JButton[] tombol;
@@ -19,12 +19,10 @@ public class BayarView extends JFrame implements ActionListener {
     JButton back;
     JButton clearAll;
     JButton bayar;
-    JLabel background;
     JLabel judul;
 
     BayarController control;
     String pathImg;
-    String cookie;
     String img;
     int height;
 
@@ -34,14 +32,20 @@ public class BayarView extends JFrame implements ActionListener {
         // Set atribute
         this.control  = new BayarController(data);
         this.pathImg = control.model.locPathImg;
-        this.cookie = control.model.cookie;
         this.height = control.model.height;
 
         // Set container
-        setSize(450, height);
-        setLocationRelativeTo(null);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setLayout(new BorderLayout());
+        addComponentContainer();
+
+        // Show
+        setVisible(true);
+
+    }
+
+    // METHOD
+    public void addComponentContainer () {
+
+        setContainer(450, height);
 
         // Set judul
         judul = new JLabel("HALAMAN PEMBAYARAN");
@@ -85,20 +89,19 @@ public class BayarView extends JFrame implements ActionListener {
 
         // Frame painting
         tambahPrdk();
-        aturBackground();
-
-        // Show
-        setVisible(true);
+        addBackground(pathImg + "latar.jpg");
 
     }
 
     // METHOD
     public void aturBackground () {
+
         // Set background
         setLayout(new BorderLayout());
         background = new JLabel(new ImageIcon(pathImg + "latar.jpg"));
         background.setLayout(new FlowLayout());
         add(background);
+
     }
 
     // METHOD
@@ -155,7 +158,7 @@ public class BayarView extends JFrame implements ActionListener {
 
         }
 
-        total = new JLabel("<html>Total: <b>Rp </b>"+control.sum(listHarga)+"<b>.-</b></html>");
+        total = new JLabel("<html>total: <b>Rp </b>"+control.sum(listHarga)+"<b>.-</b></html>");
         total.setBounds(230, 460, 200, 20);
         total.setHorizontalAlignment(JLabel.RIGHT);
         total.setFont(new Font("Arial", Font.PLAIN, 17));
@@ -218,17 +221,18 @@ public class BayarView extends JFrame implements ActionListener {
                 control.setData(i, Integer.toString(angka + 1));
                 harga[i].setText("<html><b>Rp </b>" + control.totalHarga(index, (angka + 1)) + "<b>.-</b></html>");
                 listHarga[i] = Integer.parseInt(control.totalHarga(index, (angka + 1)));
-                total.setText(control.sum(listHarga));
+                total.setText("<html>total: <b>Rp </b>"+control.sum(listHarga)+"<b>.-</b></html>");
+
                 if (control.sum(listHarga).equals("0"))
                     bayar.setBackground(new Color(52, 58, 64));
 
             } else if (source == krn[i]) {
-                if (angka > 1) {
+                if (angka > 0) {
                     ank[i].setText(Integer.toString(angka - 1));
                     control.setData(i, Integer.toString(angka - 1));
                     harga[i].setText("<html><b>Rp </b>" + control.totalHarga(i,(angka - 1)) + "<b>.-</b></html>");
-                    listHarga[i] = Integer.parseInt(control.totalHarga(index, (angka + 1)));
-                    total.setText(control.sum(listHarga));
+                    listHarga[i] = Integer.parseInt(control.totalHarga(index, (angka - 1)));
+                    total.setText("<html>total: <b>Rp </b>"+control.sum(listHarga)+"<b>.-</b></html>");
 
                 }
                 if (control.sum(listHarga).equals("0"))
@@ -237,6 +241,7 @@ public class BayarView extends JFrame implements ActionListener {
             }
         }
         if (source == bayar && !(control.sum(listHarga).equals("0"))) {
+
             control.bayar(
                 control.getCookie("nama"),
                 control.getCookie("alamat"),
@@ -249,6 +254,20 @@ public class BayarView extends JFrame implements ActionListener {
             );
             control.deleteCookie("beli");
             this.setVisible(false);
+
+        } else if (source == back) {
+
+            new MenuView();
+            this.setVisible(false);
+
+        } else if (source == clearAll) {
+
+            control.data = new String[0][0];
+            control.setCookie("beli", "");
+            getContentPane().removeAll();
+            repaint();
+            addComponentContainer();
+
         }
         
     }

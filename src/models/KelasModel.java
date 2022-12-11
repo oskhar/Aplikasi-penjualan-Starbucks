@@ -40,7 +40,7 @@ public class KelasModel {
         String driver = prop.getProperty("driver");
         
         // Connect to mysql
-        try{
+        try {
             Class.forName(driver);
             con = DriverManager.getConnection( url, user, pass);
             stmt = con.createStatement();

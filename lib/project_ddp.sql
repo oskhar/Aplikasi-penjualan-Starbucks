@@ -78,15 +78,46 @@ CREATE TABLE `minuman` (
 LOCK TABLES `minuman` WRITE;
 /*!40000 ALTER TABLE `minuman` DISABLE KEYS */;
 INSERT INTO `minuman` VALUES
-('m1.png','<html>JAVA<br>CHIP</html>','4.8','60000'),
-('m2.png','<html>RASBERRY<br>SHAKEN</html>','4.8','60000'),
-('m3.png','<html>MANGGO<br>PASSION</html>','4.8','60000'),
-('m4.png','<html>GREEN<br>TEA</html>','4.8','60000'),
+('m1.png','<html>JAVA<br>CHIP</html>','4.3','60000'),
+('m2.png','<html>RASBERRY<br>SHAKEN</html>','4.4','60000'),
+('m3.png','<html>MANGGO<br>PASSION</html>','4.9','60000'),
+('m4.png','<html>GREEN<br>TEA</html>','4.1','60000'),
 ('m5.png','<html>MOCHA<br>PRALINE</html>','4.8','60000'),
-('m6.png','<html>BLUEBERRY<br>MUFIN</html>','4.8','60000'),
-('m7.png','<html>DARK<br>MOCHA</html>','4.8','60000'),
-('m8.png','<html>CARAMEL<br>MACCHIATO</html>','4.8','60000');
+('m6.png','<html>BLUEBERRY<br>MUFIN</html>','4.5','60000'),
+('m7.png','<html>DARK<br>MOCHA</html>','4.2','60000'),
+('m8.png','<html>CARAMEL<br>MACCHIATO</html>','4','60000');
 /*!40000 ALTER TABLE `minuman` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `riwayat`
+--
+
+DROP TABLE IF EXISTS `riwayat`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `riwayat` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama` varchar(70) NOT NULL,
+  `alamat` varchar(70) NOT NULL,
+  `hargaTot` varchar(30) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `riwayat`
+--
+
+LOCK TABLES `riwayat` WRITE;
+/*!40000 ALTER TABLE `riwayat` DISABLE KEYS */;
+INSERT INTO `riwayat` VALUES
+(1,'Muhamad Oskhar Muabrok','Jakarta Barat','720000'),
+(2,'Muhamad Oskhar Muabrok','Jakarta Barat','840000'),
+(3,'Muhamad Oskhar Muabrok','Jakarta Barat','120000'),
+(4,'Muhamad Oskhar Muabrok','Jakarta Barat','120000'),
+(5,'Muhamad Oskhar Muabrok','Jakarta Barat','60000');
+/*!40000 ALTER TABLE `riwayat` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -98,4 +129,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-12-09  3:38:40
+-- Dump completed on 2022-12-11  6:53:36

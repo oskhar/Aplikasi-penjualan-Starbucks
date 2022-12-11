@@ -204,7 +204,7 @@ public class UserView extends JFrame implements ActionListener{
         latar2.add(alamat);
         
         // Set button submitLogin
-        submitTambah = new JButton("submit");
+        submitTambah = new JButton("Buat Akun");
         submitTambah.setBounds(200, 410, 200, 40);
         submitTambah.addActionListener( this );
         latar2.add(submitTambah);
@@ -269,7 +269,7 @@ public class UserView extends JFrame implements ActionListener{
         latar3.add(passwordUlang);
         
         // Set button submitLogin
-        submitChPass = new JButton("submit");
+        submitChPass = new JButton("Ubah Sandi");
         submitChPass.setBounds(200, 270, 200, 40);
         submitChPass.addActionListener( this );
         latar3.add(submitChPass);

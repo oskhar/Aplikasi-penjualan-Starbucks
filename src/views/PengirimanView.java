@@ -2,11 +2,14 @@ package views;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
-public class PengirimanView extends JFrame{
+
+public class PengirimanView extends JFrame implements ActionListener {
 
     // ATRIBUTE
     JLabel text;
+    JButton back;
 
     // CONSTRUCTOR
     public PengirimanView (String nama, String alamat, String hargaTot) {
@@ -15,7 +18,7 @@ public class PengirimanView extends JFrame{
         setSize(450, 570);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setLayout(new BorderLayout());
+        setLayout(null);
 
         // Painting
         String data = "<html>Pembelian minuman seharga "+ hargaTot +" telah berhasil dilakukan atas nama \""+ nama +"<br><br>Minuman akan dikirim ke alamat berikut: "+ alamat +"</html>";
@@ -25,9 +28,24 @@ public class PengirimanView extends JFrame{
         text.setBounds(20, 20, 410, 530);
         add(text);
 
+        back = new JButton("<< back");
+        back.setBackground(Color.white);
+        back.setBounds(20, 20, 200, 30);
+        back.setFocusable(false);
+        back.addActionListener(this);
+        add(back);
+
         // Show
         setVisible(true);
 
     }
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+        
+        new MenuView();
+        this.setVisible(false);
+		
+	}
 
 }

@@ -11,6 +11,13 @@ public class MenuController extends KelasController {
     // ATRIBUTE
     public MenuModel model = new MenuModel();
 
+    public MenuController () {
+
+        // Set cookie
+        cookie = model.cookie;
+
+    }
+
     // METHOD
     public void changeSlide (MenuView objc, int angka) {
 

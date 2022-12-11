@@ -5,15 +5,17 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class BeliView extends JFrame implements ActionListener {
+public class BeliView extends KelasView implements ActionListener{
     
     // ATRIBUTE
     BeliController control = new BeliController();
     
     JLabel[] komponen = new JLabel[4];
-    JLabel background;
+    JButton[] t = new JButton[4];
+    JButton[] l = new JButton[4];
     JLabel latar;
     JLabel ank;
+    JLabel notif;
 
     JButton back;
     JButton beli1;
@@ -21,7 +23,7 @@ public class BeliView extends JFrame implements ActionListener {
     JButton tbh;
     JButton krn;
     JButton prdk;
-    JButton[] t = new JButton[4];
+    JButton cart;
 
     String pathImg = control.model.locPathImg;
     String img;
@@ -32,10 +34,8 @@ public class BeliView extends JFrame implements ActionListener {
         // Set value
         this.data = data;
 
-        // CONTAINER
-        setSize(1000, 570);
-        setLocationRelativeTo(null);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        // Container
+        setContainer(1000, 570);
 
         // Set back button
         back = new JButton("<< Back");
@@ -52,16 +52,25 @@ public class BeliView extends JFrame implements ActionListener {
         latar.setBounds(60, 310, 860, 260);
         add(latar);
 
+        // Set latar component
+        notif = new JLabel(new ImageIcon(pathImg + "notifMasuk.png"));
+        notif.setBounds(790, 600, 195, 70);
+        add(notif);
+
+        // Set shoping cart
+        cart = new JButton(new ImageIcon(pathImg + "cart.png"));
+        cart.setLayout(null);
+        layoutTombol(cart, 950, 30, 20, 16);
+        add(cart, 1);
+
         // Frame painting
         tambahTombolAksi();
         tambahComponent();
         tambahMinuman();
+        notifShoping();
 
         // Set background
-        setLayout(new BorderLayout());
-        background = new JLabel(new ImageIcon(pathImg + "latar.jpg"));
-        background.setLayout(new FlowLayout());
-        add(background);
+        addBackground(pathImg + "latar.jpg");
 
         // Show frame
         setVisible(true);
@@ -148,6 +157,15 @@ public class BeliView extends JFrame implements ActionListener {
     }
 
     // METHOD
+    public void notifShoping () {
+        if (control.checkCookie("beli")) {
+            prdk = new JButton(new ImageIcon(pathImg + "prdk.png"));
+            layoutTombol(prdk, 957, 24, 13, 13);
+            add(prdk, 0);
+        }
+    }
+
+    // METHOD
     public void layoutTombol(JButton el, int x, int y, int wi, int he) {
 
         // Set layout
@@ -174,14 +192,6 @@ public class BeliView extends JFrame implements ActionListener {
         el.setForeground(new Color(31, 33, 48));
         el.addActionListener(this);
 
-    }
-    // METHOD
-    public void notifShoping () {
-        if (control.checkCookie("")) {
-            prdk = new JButton(new ImageIcon(pathImg + "prdk.png"));
-            layoutTombol(prdk, 957, 24, 13, 13);
-            add(prdk);
-        }
     }
 
     public static void main(String[] args) {
@@ -220,6 +230,19 @@ public class BeliView extends JFrame implements ActionListener {
         } else if (source == beli2) {
             String beliValue = control.manipString(Integer.toString(data[0]), ank.getText());
             control.setCookie("beli", beliValue);
+            notif.setBounds(790, 50, 195, 70);
+
+        } else if (source == cart || source == prdk) {
+
+            if (control.checkCookie("beli")) {
+                new BayarView(control.getData(control.getCookie("beli")));
+                this.setVisible(false);
+
+            } else {
+                new BayarView(new String[0][0]);
+                this.setVisible(false);
+            
+            }
 
         }
         

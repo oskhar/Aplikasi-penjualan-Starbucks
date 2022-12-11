@@ -10,6 +10,7 @@ public class KelasController {
     FileInputStream in;
     FileOutputStream out;
     String cookie;
+    String[][] data;
 
     // METHOD
     public void deleteCookie (String key) {
@@ -21,6 +22,58 @@ public class KelasController {
             out.close();
 
         } catch (Exception ex) {System.out.println(ex);}
+    }
+
+    // METHOD
+    public String[][] getData (String text) {
+
+        // Variable
+        int i;
+        String[] ln = text.split(",");
+        data = new String[ln.length][2];
+
+        for (i = 0; i < ln.length; i++) {
+            data[i][0] = ln[i].split("=")[0];
+            data[i][1] = ln[i].split("=")[1];
+        }
+
+        return data;
+
+    }
+
+    // METHOD
+    public String manipString (String s1, String s2) {
+
+        // Variable
+        String beli = getCookie("beli");
+        boolean ada = false;
+        int i;
+
+        if (checkCookie("beli")) {
+            data = getData(beli);
+            for (i = 0; i < data.length; i++) {
+                if (s1.equals(data[i][0])) {
+                    ada = true;
+                    data[i][1] = Integer.toString(Integer.parseInt(s2) + Integer.parseInt(data[i][1]));
+                }
+            }
+        }
+        if (ada) {
+            // Set temp variable
+            String[] temp = new String[data.length];
+            for (i = 0; i < data.length; i++) {
+                temp[i] = String.join("=", data[i]);
+            }
+            // Set beli
+            beli = String.join(",", temp);
+        
+        } else if (checkCookie("beli")) {
+            beli = beli + "," + s1 + "=" + s2;}
+        else {
+            beli = s1 + "=" + s2;}
+
+        return beli;
+
     }
 
     // METHOD
