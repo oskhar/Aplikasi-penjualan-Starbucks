@@ -149,7 +149,7 @@ public class BayarView extends KelasView implements ActionListener {
             ank[i].setForeground(new Color(31, 33, 48));
             add(ank[i]);
 
-            harga[i] = new JLabel("<html><b>Rp </b>"+control.totalHarga(index,jumlah)+"<b>.-</b></html>");
+            harga[i] = new JLabel("<html><b>Rp </b>" + manipHarga(control.totalHarga(index,jumlah)) + "<b>.-</b></html>");
             harga[i].setBounds(200, ((penY+15)+(55*i)), 150, 20);
             harga[i].setHorizontalAlignment(JLabel.LEFT);
             harga[i].setFont(new Font("Arial", Font.PLAIN, 17));
@@ -158,7 +158,7 @@ public class BayarView extends KelasView implements ActionListener {
 
         }
 
-        total = new JLabel("<html>total: <b>Rp </b>"+control.sum(listHarga)+"<b>.-</b></html>");
+        total = new JLabel("<html>total: <b>Rp </b>" + manipHarga(control.sum(listHarga)) + "<b>.-</b></html>");
         total.setBounds(230, 460, 200, 20);
         total.setHorizontalAlignment(JLabel.RIGHT);
         total.setFont(new Font("Arial", Font.PLAIN, 17));
@@ -219,9 +219,9 @@ public class BayarView extends KelasView implements ActionListener {
             if (source == tbh[i]) {
                 ank[i].setText(Integer.toString(angka + 1));
                 control.setData(i, Integer.toString(angka + 1));
-                harga[i].setText("<html><b>Rp </b>" + control.totalHarga(index, (angka + 1)) + "<b>.-</b></html>");
+                harga[i].setText("<html><b>Rp </b>" + manipHarga(control.totalHarga(index, (angka + 1))) + "<b>.-</b></html>");
                 listHarga[i] = Integer.parseInt(control.totalHarga(index, (angka + 1)));
-                total.setText("<html>total: <b>Rp </b>"+control.sum(listHarga)+"<b>.-</b></html>");
+                total.setText("<html>total: <b>Rp </b>"+manipHarga(control.sum(listHarga))+"<b>.-</b></html>");
 
                 if (control.sum(listHarga).equals("0"))
                     bayar.setBackground(new Color(52, 58, 64));
@@ -230,9 +230,9 @@ public class BayarView extends KelasView implements ActionListener {
                 if (angka > 0) {
                     ank[i].setText(Integer.toString(angka - 1));
                     control.setData(i, Integer.toString(angka - 1));
-                    harga[i].setText("<html><b>Rp </b>" + control.totalHarga(i,(angka - 1)) + "<b>.-</b></html>");
+                    harga[i].setText("<html><b>Rp </b>" + manipHarga(control.totalHarga(i,(angka - 1))) + "<b>.-</b></html>");
                     listHarga[i] = Integer.parseInt(control.totalHarga(index, (angka - 1)));
-                    total.setText("<html>total: <b>Rp </b>"+control.sum(listHarga)+"<b>.-</b></html>");
+                    total.setText("<html>total: <b>Rp </b>" + manipHarga(control.sum(listHarga)) + "<b>.-</b></html>");
 
                 }
                 if (control.sum(listHarga).equals("0"))

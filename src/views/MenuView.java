@@ -35,9 +35,9 @@ public class MenuView extends KelasView implements ActionListener {
 
         // Set judul
         judul = new JLabel("STARBUCKS");
-        judul.setBounds(0, 40, width, 20);
+        judul.setBounds(0, 40, width, 40);
         judul.setHorizontalAlignment(JLabel.CENTER);
-        judul.setFont(new Font("Arial", Font.BOLD, 18));
+        judul.setFont(new Font("Arial", Font.BOLD, 24));
         judul.setForeground(new Color(31, 33, 48));
         add(judul);
 
@@ -162,6 +162,8 @@ public class MenuView extends KelasView implements ActionListener {
 
             control.deleteCookie("user");
             control.deleteCookie("pass");
+            control.deleteCookie("alamat");
+            control.deleteCookie("nama");
             new UserView();
             this.setVisible(false);
 

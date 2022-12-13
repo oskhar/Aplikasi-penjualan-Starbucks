@@ -103,7 +103,7 @@ public class UserController extends KelasController {
         String hasil = "false";
         boolean c1 = pass.length() >= 6;
         boolean c2 = passUlang.equals(pass);
-        boolean c3 = checkCookie(email);
+        boolean c3 = !(checkCookie(email));
         String data = "pass='" + pass + "'";
         String lokasi = "email='" + email + "'";
         

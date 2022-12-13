@@ -27,7 +27,7 @@ public class MenuController extends KelasController {
         int[] data = new int[4];
 
         // Set data
-        for (int i = angka; i < angka+4; i++){
+        for (int i = angka; i < angka + 4; i++){
             tmp = i < n ? i : (i % n);
             data[i-angka] = tmp;
         }

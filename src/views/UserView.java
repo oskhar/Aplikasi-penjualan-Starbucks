@@ -40,6 +40,7 @@ public class UserView extends JFrame implements ActionListener{
     JButton bukaTambahAkun;
     JButton bukaEditPassword;
     JButton back;
+    JButton halamanAdmin;
 
     int width;
     int height;
@@ -81,19 +82,18 @@ public class UserView extends JFrame implements ActionListener{
 
         // Set button
         bukaTambahAkun = new JButton("Buat Akun");
-        bukaTambahAkun.setBounds(860, 510, 120, 20);
-        bukaTambahAkun.addActionListener(this);
-        bukaTambahAkun.setBackground(Color.white);
-        bukaTambahAkun.setBorder(null);
+        layoutBack(bukaTambahAkun, 860, 510, 120, 20);
         latar1.add(bukaTambahAkun);
 
         // Set button
         bukaEditPassword = new JButton("Ubah Sandi");
-        bukaEditPassword.setBounds(860, 485, 120, 20);
-        bukaEditPassword.addActionListener(this);
-        bukaEditPassword.setBackground(Color.white);
-        bukaEditPassword.setBorder(null);
+        layoutBack(bukaEditPassword, 860, 485, 120, 20);
         latar1.add(bukaEditPassword);
+        
+        // Set button
+        halamanAdmin = new JButton("Login Admin");
+        layoutBack(halamanAdmin, 860, 460, 120, 20);
+        latar1.add(halamanAdmin);
 
         // Set box input
         boxLogin = new JPanel();
@@ -128,6 +128,11 @@ public class UserView extends JFrame implements ActionListener{
         submitLogin = new JButton("Login");
         submitLogin.setBounds(100, 200, 200, 40);
         submitLogin.addActionListener( this );
+        submitLogin.setBorder(null);
+        submitLogin.setFocusable(false);
+        submitLogin.setBackground(new Color(31, 33, 48));
+        submitLogin.setFont(new Font("Arial", Font.BOLD, 16));
+        submitLogin.setForeground(Color.white);
         boxLogin.add(submitLogin);
         
         // Set notif
@@ -303,11 +308,18 @@ public class UserView extends JFrame implements ActionListener{
                 notifArea.setText("Password atau Email salah!");
 
             }
+    }
 
+    public void layoutBack (JButton el, int x, int y, int wi, int he) {
+        el.setBounds(x, y, wi, he);
+        el.addActionListener(this);
+        el.setBorder(null);
+        el.setFocusable(false);
+        el.setBackground(new Color(31, 33, 48));
+        el.setForeground(Color.white);
     }
 
     @Override
-
     // METHOD
     public void actionPerformed (ActionEvent e) {
 
@@ -358,7 +370,7 @@ public class UserView extends JFrame implements ActionListener{
             switch (control.changePass(username.getText(), password.getText(), passwordUlang.getText())) {
 
                 case "true":
-                    notifArea.setText("Akun berhasil ditambahkan");
+                    notifArea.setText("Password berhasil diubah");
                     username.setText("");
                     password.setText("");
                     passwordUlang.setText("");

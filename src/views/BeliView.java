@@ -66,7 +66,6 @@ public class BeliView extends KelasView implements ActionListener{
         // Frame painting
         tambahTombolAksi();
         tambahComponent();
-        tambahMinuman();
         notifShoping();
 
         // Set background
@@ -118,42 +117,36 @@ public class BeliView extends KelasView implements ActionListener{
             penY = i == 0 ? 45 : 0;
             img = pathImg + ("biji" + (i+1) + ".png");
             komponen[i] = new JLabel(new ImageIcon(img));
-            komponen[i].setBounds(penX[i], penY, 200, 200);
-            komponen[i].setLayout(null);
+            l[i] = new JButton(control.model.database[data[i]][1]);
 
-            if (i == 0)
-                add(komponen[i]);
-            else
-                latar.add(komponen[i]);
-
-        }
-
-    }
-
-    // METHOD
-    public void tambahMinuman () {
-
-        // Variable
-        int i;
-
-        // Looping
-        for (i = 0; i < 4; i++) {
-            
-            // Set data
             img = pathImg + control.model.database[data[i]][0];
-            
-            // Painting
             if (i == 0) {
+                komponen[i].setBounds(penX[i], penY, 200, 200);
+                komponen[i].setLayout(null);
+                add(komponen[i]);
                 t[i] = new JButton( new ImageIcon(pathImg + "bm" + (data[i]+1) + ".png") );
                 layoutTombol( t[i], 25, 25, 150, 150 );
+
+                layoutLabel(l[i], penX[i], (penY + 160), 150, 40);
+                l[i].setForeground(Color.white);
+                // latar.add(l[i]);
+
             } else {
+                komponen[i].setBounds(penX[i], penY, 150, 150);
+                komponen[i].setLayout(null);
+                latar.add(komponen[i]);
                 t[i] = new JButton( new ImageIcon(img));
-                layoutTombol( t[i], 50, 50, 100, 100 );
+                layoutTombol( t[i], 25, 25, 100, 100 );
+
+                layoutLabel(l[i], penX[i], (penY + 160), 150, 40);
+                l[i].setForeground(Color.white);
+                latar.add(l[i]);
             }
             komponen[i].add(t[i]);
             
+
         }
-        
+
     }
 
     // METHOD
@@ -184,7 +177,7 @@ public class BeliView extends KelasView implements ActionListener{
         // Set layout
         el.setBounds(x, y, wi, he);
         el.setHorizontalAlignment(JLabel.CENTER);
-        el.setFont(new Font("Arial", Font.BOLD, 15));
+        el.setFont(new Font("Sans-serif", Font.BOLD, 18));
         el.setBorder(null);
         el.setBorderPainted(false);
         el.setContentAreaFilled(false);
@@ -231,6 +224,7 @@ public class BeliView extends KelasView implements ActionListener{
             String beliValue = control.manipString(Integer.toString(data[0]), ank.getText());
             control.setCookie("beli", beliValue);
             notif.setBounds(790, 50, 195, 70);
+            notifShoping();
 
         } else if (source == cart || source == prdk) {
 
