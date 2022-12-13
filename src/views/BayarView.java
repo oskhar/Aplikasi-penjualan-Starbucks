@@ -250,7 +250,8 @@ public class BayarView extends KelasView implements ActionListener {
             new PengirimanView(
                 control.getCookie("nama"),
                 control.getCookie("alamat"),
-                control.sum(listHarga)
+                control.sum(listHarga),
+                control.getProduk()
             );
             control.deleteCookie("beli");
             this.setVisible(false);

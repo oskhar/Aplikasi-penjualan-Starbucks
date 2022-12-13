@@ -135,6 +135,7 @@ public class BeliView extends KelasView implements ActionListener{
                 komponen[i].setBounds(penX[i], penY, 150, 150);
                 komponen[i].setLayout(null);
                 latar.add(komponen[i]);
+                System.out.println(img);
                 t[i] = new JButton( new ImageIcon(img));
                 layoutTombol( t[i], 25, 25, 100, 100 );
 
@@ -177,7 +178,7 @@ public class BeliView extends KelasView implements ActionListener{
         // Set layout
         el.setBounds(x, y, wi, he);
         el.setHorizontalAlignment(JLabel.CENTER);
-        el.setFont(new Font("Sans-serif", Font.BOLD, 18));
+        el.setFont(new Font("Arial", Font.BOLD, 18));
         el.setBorder(null);
         el.setBorderPainted(false);
         el.setContentAreaFilled(false);

@@ -16,19 +16,31 @@ public class PengirimanView extends KelasView implements ActionListener {
     KelasModel model = new KelasModel();
 
     // CONSTRUCTOR
-    public PengirimanView (String nama, String alamat, String hargaTot) {
+    public PengirimanView (String nama, String alamat, String hargaTot, String[][] database) {
         
+        // Variable
+        int i;
+        String tmp;
+
         // Set container
         setContainer(450, 570);
 
         // Painting
         String data = "<html><font color='#28a745'>Pembelian berhasil!</font><br><br><font color='#1f2130'>Nama: " + nama + 
                                                                                                       "<br>Alamat pengiriman: " + alamat + 
-                                                                                                      "<br><br><center><b>PESANAN</b></center></font><br><br><br><p align='right' color='#1f2130' width='400'>total:<br>" + hargaTot + "</p></html>";
+                                                                                                      "<br><br><center><b>PESANAN</b></center><br>";
+        for (i = 0; i < database.length; i++) {
+            tmp = database[i][0].replace("<html>", "");
+            tmp = tmp.replace("<br>", " ");
+            tmp = tmp.replace("</html>", "");
+            tmp = tmp.toLowerCase();
+            data += tmp + " (" + database[i][1] + "): <font align='right' color='#1f2130'>Rp " + manipHarga(database[i][2]) + ".- </font><br>";
+        }
+        data += "</font><br><br><br><p align='right' color='#1f2130' width='400'>total:<br>Rp " + manipHarga(hargaTot) + ".- </p></html>";
         text = new JLabel(data);
         text.setForeground(new Color(40, 167, 69));
-        text.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 16));
-        text.setBounds(20, 20, 410, 530);
+        text.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 15));
+        text.setBounds(30, 20, 410, 530);
         text.setVerticalAlignment(JLabel.TOP);
         add(text);
 
@@ -41,10 +53,6 @@ public class PengirimanView extends KelasView implements ActionListener {
         addBackground(model.locPathImg + "latar.jpg");
         setVisible(true);
 
-    }
-
-    public static void main(String[] args) {
-        new PengirimanView("oskhar", "jakarta", "100.000");
     }
 
 	@Override

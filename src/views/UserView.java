@@ -21,6 +21,7 @@ public class UserView extends JFrame implements ActionListener{
     JLabel notifArea;
 
     JPanel boxLogin;
+    JLabel judulLogin;
     JLabel label1;
     JLabel label2;
     JLabel label3;
@@ -79,6 +80,13 @@ public class UserView extends JFrame implements ActionListener{
         latar1.setLayout(null);
         latar1.setBounds( 0, 0, width, height);
         this.add(latar1);
+
+        // Set Judul
+        judulLogin = new JLabel("Login pembelian Starbucks");
+        judulLogin.setBounds(0, 40, width, 50);
+        judulLogin.setFont(new Font("Arial", Font.BOLD, 24));
+        judulLogin.setHorizontalAlignment(JLabel.CENTER);
+        latar1.add(judulLogin);
 
         // Set button
         bukaTambahAkun = new JButton("Buat Akun");
