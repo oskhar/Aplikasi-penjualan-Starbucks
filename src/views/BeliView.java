@@ -60,7 +60,8 @@ public class BeliView extends KelasView implements ActionListener{
         // Set shoping cart
         cart = new JButton(new ImageIcon(pathImg + "cart.png"));
         cart.setLayout(null);
-        layoutTombol(cart, 950, 30, 20, 16);
+        layoutImg(cart, 950, 30, 20, 16);
+        cart.addActionListener(this);
         add(cart, 1);
 
         // Frame painting
@@ -80,19 +81,23 @@ public class BeliView extends KelasView implements ActionListener{
     public void tambahTombolAksi () {
 
         tbh = new JButton(new ImageIcon(pathImg+"tbh.png"));
-        layoutTombol(tbh, 280, 216, 20, 20);
+        layoutImg(tbh, 280, 216, 20, 20);
+        tbh.addActionListener(this);
         add(tbh);
 
         krn = new JButton(new ImageIcon(pathImg+"krn.png"));
-        layoutTombol(krn, 230, 216, 20, 20);
+        layoutImg(krn, 230, 216, 20, 20);
+        krn.addActionListener(this);
         add(krn);
         
         beli1 = new JButton(new ImageIcon(pathImg+"beli1.png"));
-        layoutTombol(beli1, 30, 200, 176, 55);
+        layoutImg(beli1, 30, 200, 176, 55);
+        beli1.addActionListener(this);
         add(beli1);
 
         beli2 = new JButton(new ImageIcon(pathImg+"beli2.png"));
-        layoutTombol(beli2, 55, 260, 176, 55);
+        layoutImg(beli2, 55, 260, 176, 55);
+        beli2.addActionListener(this);
         add(beli2);
 
         ank = new JLabel("1");
@@ -125,7 +130,8 @@ public class BeliView extends KelasView implements ActionListener{
                 komponen[i].setLayout(null);
                 add(komponen[i]);
                 t[i] = new JButton( new ImageIcon(pathImg + "bm" + (data[i]+1) + ".png") );
-                layoutTombol( t[i], 25, 25, 150, 150 );
+                layoutImg( t[i], 25, 25, 150, 150 );
+                t[i].addActionListener(this);
 
                 layoutLabel(l[i], penX[i], (penY + 160), 150, 40);
                 l[i].setForeground(Color.white);
@@ -135,9 +141,9 @@ public class BeliView extends KelasView implements ActionListener{
                 komponen[i].setBounds(penX[i], penY, 150, 150);
                 komponen[i].setLayout(null);
                 latar.add(komponen[i]);
-                System.out.println(img);
                 t[i] = new JButton( new ImageIcon(img));
-                layoutTombol( t[i], 25, 25, 100, 100 );
+                layoutImg( t[i], 25, 25, 100, 100 );
+                t[i].addActionListener(this);
 
                 layoutLabel(l[i], penX[i], (penY + 160), 150, 40);
                 l[i].setForeground(Color.white);
@@ -154,22 +160,10 @@ public class BeliView extends KelasView implements ActionListener{
     public void notifShoping () {
         if (control.checkCookie("beli")) {
             prdk = new JButton(new ImageIcon(pathImg + "prdk.png"));
-            layoutTombol(prdk, 957, 24, 13, 13);
+            layoutImg(prdk, 957, 24, 13, 13);
+            prdk.addActionListener(this);
             add(prdk, 0);
         }
-    }
-
-    // METHOD
-    public void layoutTombol(JButton el, int x, int y, int wi, int he) {
-
-        // Set layout
-        el.setBounds(x, y, wi, he);
-        el.setBorder(null);
-        el.setBorderPainted(false);
-        el.setContentAreaFilled(false);
-        el.setOpaque(false);
-        el.addActionListener(this);
-
     }
 
     // METHOD

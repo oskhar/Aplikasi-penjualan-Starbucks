@@ -12,8 +12,9 @@ public class PengirimanView extends KelasView implements ActionListener {
 
     // ATRIBUTE
     JLabel text;
+    JButton hiasan;
     JButton back;
-    KelasModel model = new KelasModel();
+    public static KelasModel model = new KelasModel();
 
     // CONSTRUCTOR
     public PengirimanView (String nama, String alamat, String hargaTot, String[][] database) {
@@ -29,6 +30,7 @@ public class PengirimanView extends KelasView implements ActionListener {
         String data = "<html><font color='#28a745'>Pembelian berhasil!</font><br><br><font color='#1f2130'>Nama: " + nama + 
                                                                                                       "<br>Alamat pengiriman: " + alamat + 
                                                                                                       "<br><br><center><b>PESANAN</b></center><br>";
+        // LOOPING
         for (i = 0; i < database.length; i++) {
             tmp = database[i][0].replace("<html>", "");
             tmp = tmp.replace("<br>", " ");
@@ -36,6 +38,8 @@ public class PengirimanView extends KelasView implements ActionListener {
             tmp = tmp.toLowerCase();
             data += tmp + " (" + database[i][1] + "): <font align='right' color='#1f2130'>Rp " + manipHarga(database[i][2]) + ".- </font><br>";
         }
+
+        // Set text
         data += "</font><br><br><br><p align='right' color='#1f2130' width='400'>total:<br>Rp " + manipHarga(hargaTot) + ".- </p></html>";
         text = new JLabel(data);
         text.setForeground(new Color(40, 167, 69));
@@ -43,6 +47,16 @@ public class PengirimanView extends KelasView implements ActionListener {
         text.setBounds(30, 20, 410, 530);
         text.setVerticalAlignment(JLabel.TOP);
         add(text);
+
+        // Set hiasan
+        hiasan = new JButton(new ImageIcon(model.locPathImg + ""));
+        hiasan.setBounds(550, 400, 50, 55);
+        hiasan.setBorder(null);
+        hiasan.setBorderPainted(false);
+        hiasan.setContentAreaFilled(false);
+        hiasan.setOpaque(false);
+        add(hiasan);
+
 
         back = new JButton("back");
         layoutTombol(back, 20, 490, 160, 30, hitam, putih, 16);
@@ -62,5 +76,9 @@ public class PengirimanView extends KelasView implements ActionListener {
         this.setVisible(false);
 		
 	}
+
+    public static void main(String[] args) {
+        System.out.println(model.locPathImg + "latar.jpg");
+    }
 
 }

@@ -36,7 +36,6 @@ public class KelasView extends JFrame {
         int pin = 0, t = 0, i;
         int titik = (harga.length() % 3 == 0) ? (harga.length() / 3 - 1) : (harga.length() / 3);
         char[] hasil = new char[harga.length() + titik];
-        System.out.println(harga.length() + titik);
 
         for (i = harga.length()-1; i >= 0; i--) {
             
@@ -66,4 +65,17 @@ public class KelasView extends JFrame {
         el.setForeground(warnaText);
 
     }
+
+    // METHOD
+    public void layoutImg(JButton el, int x, int y, int wi, int he) {
+
+        // Set layout
+        el.setBounds(x, y, wi, he);
+        el.setBorder(null);
+        el.setBorderPainted(false);
+        el.setContentAreaFilled(false);
+        el.setOpaque(false);
+
+    }
+
 }

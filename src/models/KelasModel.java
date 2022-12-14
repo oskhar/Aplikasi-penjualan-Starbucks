@@ -1,5 +1,5 @@
 // PROGRAM kelas model
-// { Sebagai kelas utama dari model yang akan menjadi parent dari model lain }
+// { Sebagai kelas utama dari model dan akan menjadi parent dari model lain }
 
 // PACKAGES
 package models;
