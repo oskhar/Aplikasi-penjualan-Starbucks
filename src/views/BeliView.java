@@ -24,6 +24,7 @@ public class BeliView extends KelasView implements ActionListener{
     JButton krn;
     JButton prdk;
     JButton cart;
+    JButton harganya;
 
     String pathImg = control.model.locPathImg;
     String img;
@@ -77,27 +78,27 @@ public class BeliView extends KelasView implements ActionListener{
     public void tambahTombolAksi () {
 
         tbh = new JButton(new ImageIcon(pathImg+"tbh.png"));
-        layoutImg(tbh, 280, 216, 20, 20);
+        layoutImg(tbh, 800, 148, 20, 20);
         tbh.addActionListener(this);
         add(tbh);
 
         krn = new JButton(new ImageIcon(pathImg+"krn.png"));
-        layoutImg(krn, 230, 216, 20, 20);
+        layoutImg(krn, 750, 148, 20, 20);
         krn.addActionListener(this);
         add(krn);
         
         beli1 = new JButton("Beli");
-        layoutTombol(beli1, 850, 140, 100, 40, hitam, putih, 17);
+        layoutTombol(beli1, 850, 140, 100, 36, hitam, putih, 16);
         beli1.addActionListener(this);
         add(beli1);
 
         beli2 = new JButton("Tambah Keranjang");
-        layoutTombol(beli2, 740, 200, 230, 40, hitam, putih, 17);
+        layoutTombol(beli2, 740, 200, 230, 36, hitam, putih, 16);
         beli2.addActionListener(this);
         add(beli2);
 
         ank = new JLabel("1");
-        ank.setBounds(245, 216, 40, 20);
+        ank.setBounds(765, 148, 40, 20);
         ank.setHorizontalAlignment(JLabel.CENTER);
         ank.setFont(new Font("Arial", Font.BOLD, 16));
         ank.setForeground(new Color(31, 33, 48));
@@ -129,9 +130,15 @@ public class BeliView extends KelasView implements ActionListener{
                 layoutImg( t[i], 25, 25, 150, 150 );
                 t[i].addActionListener(this);
 
-                layoutLabel(l[i], penX[i], (penY + 160), 150, 40);
-                l[i].setForeground(Color.white);
-                // latar.add(l[i]);
+                l[i] = new JButton(control.model.database[data[i]][1].replace("<br>", " ").replace("<html>", "").replace("</html>", ""));
+                l[i].setHorizontalAlignment(JButton.LEFT);
+                layoutTombol(l[i], 70, 120, 350, 50, new Color(0,0,0,0), hitam, 30);
+                add(l[i]);
+
+                harganya = new JButton("<html><font color='#f07c57'>Rp</font> "+manipHarga(control.model.database[data[i]][3])+"<font color='#f07c57'>.-</font></html>");
+                harganya.setHorizontalAlignment(JButton.LEFT);
+                layoutTombol(harganya, 70, 165, 250, 40, new Color(0,0,0,0), hitam, 24);
+                add(harganya);
 
             } else {
                 komponen[i].setBounds(penX[i], penY, 150, 150);

@@ -23,19 +23,19 @@ public class AdminMenuView extends KelasView implements ActionListener {
         setContainer(1000, 570);
 
         // Painting
-        pengaturanUser = new JButton("Mengatur User");
+        pengaturanUser = new JButton("Lihat tabel User");
         pengaturanUser.addActionListener(this);
-        layoutTombol(pengaturanUser, 350, 100, 300, 40, hitam, putih, 16);
+        layoutTombol(pengaturanUser, 350, 150, 300, 40, hitam, putih, 16);
         add(pengaturanUser);
 
-        minumanTersedia = new JButton("Mengatur Minuman");
+        minumanTersedia = new JButton("Lihat tabel Minuman");
         minumanTersedia.addActionListener(this);
-        layoutTombol(minumanTersedia, 350, 160, 300, 40, hitam, putih, 16);
+        layoutTombol(minumanTersedia, 350, 210, 300, 40, hitam, putih, 16);
         add(minumanTersedia);
 
         riwayatPenjualan = new JButton("Riwayat Penjualan");
         riwayatPenjualan.addActionListener(this);
-        layoutTombol(riwayatPenjualan, 350, 220, 300, 40, hitam, putih, 16);
+        layoutTombol(riwayatPenjualan, 350, 270, 300, 40, hitam, putih, 16);
         add(riwayatPenjualan);
 
         addBackground(model.locPathImg+"latar.jpg");
@@ -50,7 +50,18 @@ public class AdminMenuView extends KelasView implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
+        Object source = e.getSource();
+
+        // Check botton
+        if (source == pengaturanUser) {
+            new AdminAkunView();
+            setVisible(false);
+
+        } else if (source == minumanTersedia) {
+            new AdminAkunView();
+            setVisible(false);
+            
+        }
         
     }
 

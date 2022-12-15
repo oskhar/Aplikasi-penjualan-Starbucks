@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import controllers.AdminController;
 
-public class AkunManView extends KelasView {
+public class AdminMinumanView extends KelasView {
 
     // ATRIBUTE
     AdminController control = new AdminController();
@@ -15,27 +15,23 @@ public class AkunManView extends KelasView {
     String pathImg = control.model.locPathImg;
     
     // CONTAINER
-    public AkunManView() {
+    public AdminMinumanView() {
 
         // Variable
-        String[] judul = {"email", "pass", "nama", "alamat"};
+        String[] judul = {"Image Path", "Nama", "Rate", "Harga"};
 
         // Set container
         setContainer(width, height);
 
         JPanel panel = new JPanel();
-        panel.setBounds(50, 50, 900, 470);
+        panel.setBounds(50, 50, 900, 270);
         panel.setBackground(new Color(0, 0, 0, 0));;
         panel.setOpaque(false);
         add(panel);
 
         // Set table
-        table = new JTable(control.model.databaseAkun, judul);
-        table.setBounds(0, 0, 900, 470);
-        table.getColumnModel().getColumn(0).setPreferredWidth(35);
-        table.getColumnModel().getColumn(1).setPreferredWidth(0);
-        table.getColumnModel().getColumn(2).setPreferredWidth(25);
-        table.getColumnModel().getColumn(3).setPreferredWidth(20);
+        table = new JTable(control.model.databaseMinuman, judul);
+        table.setBounds(0, 0, 900, 270);
         panel.add(new JScrollPane(table));
 
         // Painting
@@ -45,7 +41,7 @@ public class AkunManView extends KelasView {
     }
 
     public static void main(String[] args) {
-        new AkunManView();
+        new AdminMinumanView();
     }
 
 }
