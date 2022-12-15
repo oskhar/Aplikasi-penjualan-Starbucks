@@ -38,7 +38,7 @@ public class MenuView extends KelasView implements ActionListener {
         judul.setBounds(0, 40, width, 40);
         judul.setHorizontalAlignment(JLabel.CENTER);
         judul.setFont(new Font("Arial", Font.BOLD, 24));
-        judul.setForeground(new Color(31, 33, 48));
+        judul.setForeground(hitam);
         add(judul);
 
         // Set back button
@@ -127,7 +127,7 @@ public class MenuView extends KelasView implements ActionListener {
         el.setBorderPainted(false);
         el.setContentAreaFilled(false);
         el.setOpaque(false);
-        el.setForeground(new Color(31, 33, 48));
+        el.setForeground(hitam);
         el.addActionListener(this);
 
     }

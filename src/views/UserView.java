@@ -52,7 +52,7 @@ public class UserView extends JFrame implements ActionListener, KeyListener{
     Color merah = new Color(220, 53, 69);
     Color hijau = new Color(40, 167, 69);
     Color hitam = new Color(31, 33, 48);
-    Color putih = new Color(255, 240, 238);
+    Color putih = new Color(255, 250, 248);
     
     // CONSTRUCTOR
     public UserView () {
@@ -66,6 +66,7 @@ public class UserView extends JFrame implements ActionListener, KeyListener{
         setSize(width, height);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setResizable(false);
         setLayout(new BorderLayout());
 
         // Painting latar1
@@ -157,7 +158,7 @@ public class UserView extends JFrame implements ActionListener, KeyListener{
         
         // Set notif
         notifArea = new JLabel("");
-        notifArea.setBounds(0, 10, 1000, 20);
+        notifArea.setBounds(100, 10, 980, 20);
         notifArea.setForeground(new Color(220, 53, 69));
         notifArea.setFont(new Font("Arial", Font.BOLD, 18));
         notifArea.setBorder(null);
@@ -243,7 +244,7 @@ public class UserView extends JFrame implements ActionListener, KeyListener{
         
         // Set notif
         notifArea = new JLabel("");
-        notifArea.setBounds(0, 10, 1000, 20);
+        notifArea.setBounds(100, 10, 980, 20);
         notifArea.setForeground(new Color(220, 53, 69));
         notifArea.setFont(new Font("Arial", Font.BOLD, 18));
         notifArea.setBorder(null);
@@ -307,7 +308,7 @@ public class UserView extends JFrame implements ActionListener, KeyListener{
         
         // Set notif
         notifArea = new JLabel("");
-        notifArea.setBounds(200, 20, 400, 20);
+        notifArea.setBounds(10020, 20, 980, 20);
         notifArea.setFont(new Font("Arial", Font.BOLD, 18));
         notifArea.setBorder(null);
         latar3.add(notifArea);
@@ -348,7 +349,7 @@ public class UserView extends JFrame implements ActionListener, KeyListener{
         
         // Set notif
         notifArea = new JLabel("");
-        notifArea.setBounds(200, 20, 400, 20);
+        notifArea.setBounds(10020, 20, 980, 20);
         notifArea.setFont(new Font("Arial", Font.BOLD, 18));
         notifArea.setBorder(null);
         latar4.add(notifArea);
@@ -401,60 +402,70 @@ public class UserView extends JFrame implements ActionListener, KeyListener{
         } else if (source == submitTambah) {
 
             // Query sql insert
-            switch (control.addUser(username.getText(), password.getText(), passwordUlang.getText(), nama.getText(), alamat.getText())) {
+            if (!(username.getText().equals("")) && !(nama.getText().equals("")) && !(alamat.getText().equals(""))){
+                switch (control.addUser(username.getText(), password.getText(), passwordUlang.getText(), nama.getText(), alamat.getText())) {
 
-                case "true":
-                    notifArea.setText("Akun berhasil ditambahkan");
-                    username.setText("");
-                    password.setText("");
-                    passwordUlang.setText("");
-                    nama.setText("");
-                    alamat.setText("");
-                    break;
+                    case "true":
+                        notifArea.setText("Akun berhasil ditambahkan");
+                        username.setText("");
+                        password.setText("");
+                        passwordUlang.setText("");
+                        nama.setText("");
+                        alamat.setText("");
+                        break;
 
-                case "email":
-                    notifArea.setText("Email sudah digunakan!");
-                    break;
+                    case "email":
+                        notifArea.setText("Email sudah digunakan!");
+                        break;
 
-                case "ppass":
-                    notifArea.setText("Password harus lebih dari 6 karakter!");
-                    break;
-                    
-                case "epass":
-                    notifArea.setText("Password tidak sama dengan ulangi password!");
-                    break;
+                    case "ppass":
+                        notifArea.setText("Password harus lebih dari 6 karakter!");
+                        break;
+                        
+                    case "epass":
+                        notifArea.setText("Password tidak sama dengan ulangi password!");
+                        break;
 
-                default:
-                    notifArea.setText("Data invalid!");
+                    default:
+                        notifArea.setText("Data invalid!");
+
+                }
+            } else {
+                notifArea.setText("Data invalid!");
 
             }
 
         } else if (source == submitChPass) {
 
-            // Query sql update
-            switch (control.changePass(username.getText(), password.getText(), passwordUlang.getText())) {
+            if (!(username.getText().equals(""))) {
+                // Query sql update
+                switch (control.changePass(username.getText(), password.getText(), passwordUlang.getText())) {
 
-                case "true":
-                    notifArea.setText("Password berhasil diubah");
-                    username.setText("");
-                    password.setText("");
-                    passwordUlang.setText("");
-                    break;
+                    case "true":
+                        notifArea.setText("Password berhasil diubah");
+                        username.setText("");
+                        password.setText("");
+                        passwordUlang.setText("");
+                        break;
 
-                case "email":
-                    notifArea.setText("Email sudah digunakan!");
-                    break;
+                    case "email":
+                        notifArea.setText("Email sudah digunakan!");
+                        break;
 
-                case "ppass":
-                    notifArea.setText("Password harus lebih dari 6 karakter!");
-                    break;
-                    
-                case "epass":
-                    notifArea.setText("Password tidak sama dengan ulangi password!");
-                    break;
+                    case "ppass":
+                        notifArea.setText("Password harus lebih dari 6 karakter!");
+                        break;
+                        
+                    case "epass":
+                        notifArea.setText("Password tidak sama dengan ulangi password!");
+                        break;
 
-                default:
-                    notifArea.setText("Data invalid!");
+                    default:
+                        notifArea.setText("Data invalid!");
+
+                }
+            } else {
+                notifArea.setText("Data invalid!");
 
             }
 

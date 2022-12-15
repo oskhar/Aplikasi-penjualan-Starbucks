@@ -45,7 +45,7 @@ public class PengirimanView extends KelasView implements ActionListener {
         // Set text
         data += "</font><br><br><br><p align='right' color='#1f2130' width='400'>total:<br>Rp " + manipHarga(hargaTot) + ".- </p></html>";
         text = new JLabel(data);
-        text.setForeground(new Color(40, 167, 69));
+        text.setForeground(hijau);
         text.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 15));
         text.setBounds(30, 20, 410, 530);
         text.setVerticalAlignment(JLabel.TOP);

@@ -2,13 +2,15 @@ package views;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 import controllers.AdminController;
 
-public class AdminAkunView extends KelasView {
+public class AdminAkunView extends KelasView implements ActionListener {
 
     // ATRIBUTE
     AdminController control = new AdminController();
     JTable table;
+    JButton back;
     
     int width = control.model.width;
     int height = control.model.height;
@@ -34,6 +36,12 @@ public class AdminAkunView extends KelasView {
         table.setBounds(0, 0, 900, 470);
         panel.add(new JScrollPane(table));
 
+        // Set button
+        back = new JButton("Back");
+        back.addActionListener(this);
+        layoutTombol(back, 880, 500, 100, 25, hitam, putih, 15);
+        add(back);
+
         // Painting
         addBackground(pathImg + "latar.jpg");
         setVisible(true);
@@ -42,6 +50,21 @@ public class AdminAkunView extends KelasView {
 
     public static void main(String[] args) {
         new AdminAkunView();
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        
+        // Object
+        Object source = e.getSource();
+
+        // Check button
+        if (source == back) {
+            new AdminMenuView();
+            setVisible(false);
+
+        }
+        
     }
 
 }

@@ -70,7 +70,7 @@ public class BayarView extends KelasView implements ActionListener {
         clearAll.setBounds(215, 500, 100, 30);
         clearAll.setBorder(null);
         clearAll.setFont(new Font("Arial", Font.PLAIN, 15));
-        clearAll.setBackground(new Color(220, 53, 69));
+        clearAll.setBackground(merah);
         clearAll.setForeground(Color.white);
         clearAll.setFocusable(false);
         clearAll.addActionListener(this);
@@ -81,7 +81,7 @@ public class BayarView extends KelasView implements ActionListener {
         bayar.setBounds(330, 500, 100, 30);
         bayar.setBorder(null);
         bayar.setFont(new Font("Arial", Font.PLAIN, 15));
-        bayar.setBackground(new Color(40, 167, 69));
+        bayar.setBackground(hijau);
         bayar.setForeground(Color.white);
         bayar.setFocusable(false);
         bayar.addActionListener(this);
@@ -260,6 +260,7 @@ public class BayarView extends KelasView implements ActionListener {
 
             new MenuView();
             this.setVisible(false);
+            control.refreshCoockie();
 
         } else if (source == clearAll) {
 

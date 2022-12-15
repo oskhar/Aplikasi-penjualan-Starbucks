@@ -91,4 +91,34 @@ public class BayarController extends KelasController {
         return hasil;
     }
 
+    // METHOD
+    public void refreshCoockie () {
+        
+        // Variable
+        int i, j = 0, pen = 0;
+        String[] temp;
+        String[][] hasil;
+
+        for (i = 0; i < data.length; i++) {
+            if (data[i][1].equals("0")) {
+                pen++;
+            }
+        }
+        hasil = new String[data.length-pen][2];
+        temp = new String[data.length-pen];
+
+        for (i = 0; i < data.length; i++) {
+            if (!(data[i][1].equals("0"))) {
+                hasil[j][0] = data[i][0];
+                hasil[j][1] = data[i][1];
+                j++;
+            }
+        }
+
+        for (i = 0; i < hasil.length; i++) {
+            temp[i] = String.join("=", hasil[i]);
+        }
+        setCookie("beli", String.join(",", temp));
+    }
+
 }

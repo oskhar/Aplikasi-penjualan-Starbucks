@@ -148,4 +148,19 @@ public class KelasModel {
 
     }
 
+    // METHOD
+    public void sqlDeleteAll (String table) {
+
+        // Execute query sql
+        try {
+            sql = "DELETE FROM " + table;
+            stmt.executeUpdate(sql);
+
+        } catch (Exception ex) {
+            System.out.println("Error =" + ex);
+
+        }
+
+    }
+
 }

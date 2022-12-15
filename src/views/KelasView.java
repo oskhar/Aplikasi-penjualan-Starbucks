@@ -8,7 +8,10 @@ public class KelasView extends JFrame {
     // ATRIBUTE
     JLabel background;
     Color hitam = new Color(31, 33, 48);
-    Color putih = new Color(255, 240, 238);
+    Color putih = new Color(255, 250, 248);
+    Color hijau = new Color(40, 167, 69);
+    Color merah = new Color(220, 53, 69);
+    Color transparent = new Color(0, 0, 0, 0);
     
     // METHOD
     public void setContainer (int wi, int he) {

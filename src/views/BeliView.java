@@ -93,7 +93,7 @@ public class BeliView extends KelasView implements ActionListener{
         add(beli1);
 
         beli2 = new JButton("Tambah Keranjang");
-        layoutTombol(beli2, 740, 200, 230, 36, hitam, putih, 16);
+        layoutTombol(beli2, 720, 200, 230, 36, hitam, putih, 16);
         beli2.addActionListener(this);
         add(beli2);
 
@@ -101,7 +101,7 @@ public class BeliView extends KelasView implements ActionListener{
         ank.setBounds(765, 148, 40, 20);
         ank.setHorizontalAlignment(JLabel.CENTER);
         ank.setFont(new Font("Arial", Font.BOLD, 16));
-        ank.setForeground(new Color(31, 33, 48));
+        ank.setForeground(hitam);
         add(ank);
 
     }
@@ -131,13 +131,15 @@ public class BeliView extends KelasView implements ActionListener{
                 t[i].addActionListener(this);
 
                 l[i] = new JButton(control.model.database[data[i]][1].replace("<br>", " ").replace("<html>", "").replace("</html>", ""));
+                layoutTombol(l[i], 70, 120, 350, 50, transparent, hitam, 30);
                 l[i].setHorizontalAlignment(JButton.LEFT);
-                layoutTombol(l[i], 70, 120, 350, 50, new Color(0,0,0,0), hitam, 30);
+                l[i].setContentAreaFilled(false);
                 add(l[i]);
 
                 harganya = new JButton("<html><font color='#f07c57'>Rp</font> "+manipHarga(control.model.database[data[i]][3])+"<font color='#f07c57'>.-</font></html>");
+                layoutTombol(harganya, 70, 165, 250, 40, transparent, hitam, 24);
                 harganya.setHorizontalAlignment(JButton.LEFT);
-                layoutTombol(harganya, 70, 165, 250, 40, new Color(0,0,0,0), hitam, 24);
+                harganya.setContentAreaFilled(false);
                 add(harganya);
 
             } else {
@@ -150,6 +152,7 @@ public class BeliView extends KelasView implements ActionListener{
 
                 layoutLabel(l[i], penX[i], (penY + 160), 150, 40);
                 l[i].setForeground(Color.white);
+                l[i].addActionListener(this);
                 latar.add(l[i]);
             }
             komponen[i].add(t[i]);
@@ -180,7 +183,7 @@ public class BeliView extends KelasView implements ActionListener{
         el.setBorderPainted(false);
         el.setContentAreaFilled(false);
         el.setOpaque(false);
-        el.setForeground(new Color(31, 33, 48));
+        el.setForeground(hitam);
         el.addActionListener(this);
 
     }
@@ -195,6 +198,7 @@ public class BeliView extends KelasView implements ActionListener{
 
         // Object
         Object source = e.getSource();
+        int i;
 
         // Check button
         if (source == tbh) {
@@ -236,6 +240,13 @@ public class BeliView extends KelasView implements ActionListener{
             
             }
 
+        }
+
+        for (i = 1; i <= 3; i++) {
+            if (source == t[i] || source == l[i]) {
+                control.changeSlide(this, data[i]);
+
+            }
         }
         
     }
