@@ -1,8 +1,11 @@
 package views;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+
 import models.KelasModel;
-import javax.swing.*;
-import java.awt.event.*;
 
 // KELAS
 public class AdminMenuView extends KelasView implements ActionListener {

@@ -2,7 +2,6 @@ package controllers;
 
 import models.BeliModel;
 import views.BeliView;
-import views.MenuView;
 
 public class BeliController extends KelasController {
     

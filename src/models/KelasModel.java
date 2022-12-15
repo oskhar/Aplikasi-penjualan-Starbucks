@@ -4,11 +4,14 @@
 // PACKAGES
 package models;
 
-// PUTAKA
-import java.sql.*;
-import java.util.Properties;
-import java.io.FileInputStream;
+// PUSTAKA
 import java.io.File;
+import java.io.FileInputStream;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Properties;
 
 // KELAS
 public class KelasModel {

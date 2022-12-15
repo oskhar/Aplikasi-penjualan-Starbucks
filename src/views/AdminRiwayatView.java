@@ -1,10 +1,17 @@
 package views;
 
-import javax.swing.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-import java.awt.*;
-import java.awt.event.*;
 import controllers.AdminController;
 
 public class AdminRiwayatView extends KelasView implements ActionListener {
