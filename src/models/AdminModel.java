@@ -3,9 +3,9 @@ package models;
 public class AdminModel extends KelasModel {
     
     // ATRIBUTE
-    String[][] databaseAkun;
-    String[][] databaseMinuman;
-    String[][] databaseRiwayat;
+    public String[][] databaseAkun;
+    public String[][] databaseMinuman;
+    public String[][] databaseRiwayat;
     String[] isiData;
 
     public AdminModel () {

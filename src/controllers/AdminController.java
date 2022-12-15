@@ -5,14 +5,13 @@ import models.AdminModel;
 public class AdminController extends KelasController{
     
     // ATRIBUTE
-    public AdminModel model;
+    public AdminModel model = new AdminModel();
 
     // CONTAINER
     public AdminController () {
 
         // Set data
         cookie = model.cookie;
-        model = new AdminModel();
 
     }
 

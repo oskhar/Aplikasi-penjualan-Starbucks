@@ -14,10 +14,13 @@ public class PengirimanView extends KelasView implements ActionListener {
     JLabel text;
     JButton hiasan;
     JButton back;
-    public static KelasModel model = new KelasModel();
+    public KelasModel model = new KelasModel();
 
     // CONSTRUCTOR
     public PengirimanView (String nama, String alamat, String hargaTot, String[][] database) {
+
+        // Configurasi
+        model.sqlCon();
         
         // Variable
         int i;
@@ -49,8 +52,26 @@ public class PengirimanView extends KelasView implements ActionListener {
         add(text);
 
         // Set hiasan
-        hiasan = new JButton(new ImageIcon(model.locPathImg + ""));
-        hiasan.setBounds(550, 400, 50, 55);
+        hiasan = new JButton(new ImageIcon(model.locPathImg + "hiasan.png"));
+        hiasan.setBounds(255, 420, 70, 100);
+        hiasan.setBorder(null);
+        hiasan.setBorderPainted(false);
+        hiasan.setContentAreaFilled(false);
+        hiasan.setOpaque(false);
+        add(hiasan);
+
+        // Set hiasan
+        hiasan = new JButton(new ImageIcon(model.locPathImg + "hiasan.png"));
+        hiasan.setBounds(295, 420, 70, 100);
+        hiasan.setBorder(null);
+        hiasan.setBorderPainted(false);
+        hiasan.setContentAreaFilled(false);
+        hiasan.setOpaque(false);
+        add(hiasan);
+
+        // Set hiasan
+        hiasan = new JButton(new ImageIcon(model.locPathImg + "hiasan.png"));
+        hiasan.setBounds(335, 420, 70, 100);
         hiasan.setBorder(null);
         hiasan.setBorderPainted(false);
         hiasan.setContentAreaFilled(false);
@@ -78,7 +99,7 @@ public class PengirimanView extends KelasView implements ActionListener {
 	}
 
     public static void main(String[] args) {
-        System.out.println(model.locPathImg + "latar.jpg");
+        
     }
 
 }

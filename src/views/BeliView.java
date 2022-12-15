@@ -38,13 +38,9 @@ public class BeliView extends KelasView implements ActionListener{
         setContainer(1000, 570);
 
         // Set back button
-        back = new JButton("<< Back");
-        back.setBounds(10, 10, 100, 20);
-        back.setBorder(null);
-        back.setFocusable(false);
-        back.setContentAreaFilled(false);
+        back = new JButton("Back");
+        layoutTombol(back, 20, 20, 100, 25, hitam, putih, 15);
         back.addActionListener(this);
-        back.setFont(new Font("Arial", Font.PLAIN, 15));
         add(back);
 
         // Set latar component
@@ -70,7 +66,7 @@ public class BeliView extends KelasView implements ActionListener{
         notifShoping();
 
         // Set background
-        addBackground(pathImg + "latar.jpg");
+        addBackground(pathImg + "latar3.jpg");
 
         // Show frame
         setVisible(true);
@@ -90,13 +86,13 @@ public class BeliView extends KelasView implements ActionListener{
         krn.addActionListener(this);
         add(krn);
         
-        beli1 = new JButton(new ImageIcon(pathImg+"beli1.png"));
-        layoutImg(beli1, 30, 200, 176, 55);
+        beli1 = new JButton("Beli");
+        layoutTombol(beli1, 850, 140, 100, 40, hitam, putih, 17);
         beli1.addActionListener(this);
         add(beli1);
 
-        beli2 = new JButton(new ImageIcon(pathImg+"beli2.png"));
-        layoutImg(beli2, 55, 260, 176, 55);
+        beli2 = new JButton("Tambah Keranjang");
+        layoutTombol(beli2, 740, 200, 230, 40, hitam, putih, 17);
         beli2.addActionListener(this);
         add(beli2);
 

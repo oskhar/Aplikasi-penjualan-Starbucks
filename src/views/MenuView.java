@@ -42,13 +42,9 @@ public class MenuView extends KelasView implements ActionListener {
         add(judul);
 
         // Set back button
-        logout = new JButton("<< Logout");
-        logout.setBounds(890, 510, 100, 20);
-        logout.setBorder(null);
-        logout.setFocusable(false);
-        logout.setContentAreaFilled(false);
+        logout = new JButton("Logout");
+        layoutTombol(logout, 880, 500, 100, 25, hitam, putih, 15);
         logout.addActionListener(this);
-        logout.setFont(new Font("Arial", Font.PLAIN, 15));
         add(logout);
 
         // Set shoping cart
@@ -63,7 +59,7 @@ public class MenuView extends KelasView implements ActionListener {
         notifShoping();
 
         // Set background
-        addBackground(pathImg + "latar.jpg");
+        addBackground(pathImg + "latar1.jpeg");
 
         // Show
         setVisible(true);

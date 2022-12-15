@@ -16,6 +16,7 @@ public class AdminMenuView extends KelasView implements ActionListener {
     // CONSTRUCTOR
     AdminMenuView () {
 
+        // Configurasi
         model.sqlCon();
 
         // Set container

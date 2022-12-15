@@ -18,6 +18,7 @@ public class UserView extends JFrame implements ActionListener, KeyListener{
     JLabel latar1;
     JLabel latar2;
     JLabel latar3;
+    JLabel latar4;
     JLabel notifArea;
 
     JPanel boxLogin;
@@ -37,6 +38,7 @@ public class UserView extends JFrame implements ActionListener, KeyListener{
     JButton submitLogin;
     JButton submitTambah;
     JButton submitChPass;
+    JButton submitAdmin;
     JButton bukaLogin;
     JButton bukaTambahAkun;
     JButton bukaEditPassword;
@@ -56,7 +58,7 @@ public class UserView extends JFrame implements ActionListener, KeyListener{
     public UserView () {
 
         // Set atribute
-        this.img = control.model.locPathImg + "latar.jpg";
+        this.img = control.model.locPathImg + "latar2.jpg";
         this.width = control.model.width;
         this.height = control.model.height;
 
@@ -93,6 +95,11 @@ public class UserView extends JFrame implements ActionListener, KeyListener{
         judulLogin.setForeground(hitam);
         judulLogin.setHorizontalAlignment(JLabel.CENTER);
         latar1.add(judulLogin);
+
+        // Set logo
+        JLabel logo = new JLabel(new ImageIcon(control.model.locPathImg+"logoStarbucks.png"));
+        logo.setBounds(30, 360, 150, 150);
+        latar1.add(logo);
 
         // Set button
         bukaTambahAkun = new JButton("Buat Akun");
@@ -308,6 +315,47 @@ public class UserView extends JFrame implements ActionListener, KeyListener{
     }
 
     // METHOD
+    public void tambahLatar4 () {
+
+        // Set background img
+        latar4 = new JLabel(new ImageIcon(img));
+        latar4.setLayout(null);
+        latar4.setBounds( 0, 0, width, height);
+        this.add(latar4);
+        
+        // Set label input
+        label1 = new JLabel("Password admin");
+        label1.setBounds( 200, 174, 600, 12);
+        label1.setFont(new Font("Arial", Font.BOLD, 12));
+        latar4.add(label1);
+
+        // Set input component
+        password = new JTextField();
+        password.setBounds(200, 188, 600, 40);
+        latar4.add(password);
+        
+        // Set button submitLogin
+        submitAdmin = new JButton("Login halaman Admin");
+        layoutBack(submitAdmin, 200, 270, 200, 40);
+        submitAdmin.addActionListener( this );
+        latar4.add(submitAdmin);
+
+        // Set button back
+        back = new JButton("Back");
+        layoutBack(back, 870, 500, 110, 30);
+        back.addActionListener(this);
+        latar4.add(back);
+        
+        // Set notif
+        notifArea = new JLabel("");
+        notifArea.setBounds(200, 20, 400, 20);
+        notifArea.setFont(new Font("Arial", Font.BOLD, 18));
+        notifArea.setBorder(null);
+        latar4.add(notifArea);
+
+    }
+
+    // METHOD
     public void config () {
 
         if (control.checkCookie("user"))
@@ -410,6 +458,13 @@ public class UserView extends JFrame implements ActionListener, KeyListener{
 
             }
 
+        } else if (source == submitAdmin) {
+            if (password.getText().equals("rootAdmin")) {
+                new AdminMenuView();
+            } else {
+                notifArea.setText("Password salah!");
+            }
+        
         } else if (source == bukaTambahAkun) {
 
             // Change latar
@@ -423,6 +478,13 @@ public class UserView extends JFrame implements ActionListener, KeyListener{
             this.getContentPane().removeAll();
             this.repaint();
             tambahLatar3();
+
+        } else if (source == halamanAdmin) {
+
+            // Change latar
+            this.getContentPane().removeAll();
+            this.repaint();
+            tambahLatar4();
 
         } else if (source == back) {
 
