@@ -24,9 +24,7 @@ Demi pemeliharaan dan pengembangan aplikasi yang lebih terjaga, kami membagi fol
 * `lib`: folder untuk tempat depedensi program
 * `img`: folder untuk menyimpan semua gambar
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+Meanwhile, file compile sebagai output akan dialihkan ke dalam folder `bin` sebagai binary folder default.
 
 ## Dependency Management
 
