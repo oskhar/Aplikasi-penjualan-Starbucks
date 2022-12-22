@@ -24,8 +24,11 @@ Demi pemeliharaan dan pengembangan aplikasi yang lebih terjaga, kami membagi fol
 * `lib`: folder untuk tempat depedensi program
 * `img`: folder untuk menyimpan semua gambar
 
-Meanwhile, file compile sebagai output akan dialihkan ke dalam folder `bin` sebagai binary folder default.
+Catatan, file compile sebagai output akan dialihkan ke dalam folder `bin` sebagai binary folder default.
 
-## Dependency Management
+## Cara memasang aplikasi
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+* Persiapan instalasi
+  - `Install` jdk versi 11
+  - `Siapkan` / `install` IDE sebagai media pengembangan
+  - `Download` / `git-clone` Aplikasi penjualan Starbucks
