@@ -65,8 +65,8 @@ Demi pemeliharaan dan pengembangan aplikasi yang lebih terjaga, kami membagi fol
   ![Ini Gambar](docs/img/d6.png)
   6. **Masuk** folder Models dan buka file KelasMode.java<br/>
   ![Ini Gambar](docs/img/d7.png)
-  7. **Sesuaikan** lokasi folder java.properties, jika menggunakan windows anda harus menganti `/` menjadi `\\`, namun jika menggunakan linux anda bisa membiarkannya tetap seperti itu<br/>
-  ![Ini Gambar](docs/img/d7.png)
+  7. **Sesuaikan** lokasi folder java.properties, jika menggunakan windows anda harus menganti "/" menjadi "\\", namun jika menggunakan linux anda bisa membiarkannya tetap seperti itu<br/>
+  ![Ini Gambar](docs/img/d8.png)
   
 
     
