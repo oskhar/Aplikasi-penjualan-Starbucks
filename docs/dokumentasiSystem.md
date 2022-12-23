@@ -15,7 +15,8 @@ Lalu ada folder models, views, dan controllers yang masing masing menampung bagi
 
 ```java
 
-public void sqlCon () {
+    // METHOD
+    public void sqlCon () {
 
         // Variable
         config();
@@ -42,7 +43,7 @@ public void sqlCon () {
 
     }
 
-    // METHOD config
+    // METHOD
     public void config () {
 
         // Access data from java.properties
@@ -60,7 +61,7 @@ public void sqlCon () {
 
     }
 
-    // METHOD update data
+    // METHOD
     public void sqlUpdate (String table, String data, String lokasi) {
 
         // Execute query sql
@@ -153,3 +154,22 @@ public void sqlCon () {
     }
 
 ```
+
+* `sqlCon`: Menghubungkan program ke database sql sekaligus menetapkan value pada atribut
+* `config`: Sebagai konfigurasi awal dengan database sql
+* `sqlUpdate`: Update atau mengubah data column pada row tertentu
+* `sqlGetAll`: Mengambil semua tabel dalam database sql menjadi array dua dimensi
+* `getCount`: Mendapatkan panjang row pada database
+* `sqlInsert`: Menambah data baru pada table dalam database
+* `sqlDeleteAll`: Menghapus semua value pada table yang dituju
+
+Dengan begini saya hanya perlu memakai method pada file Controller saat saya ingin mengatur database melalui kontroler. Jadi konsepnya seperti ini, <br/>
+model -> controller -> view -> user
+* data dalam database disiapkan oleh model
+* dikelolar oleh controller
+* dan ditampilkan pada view<br/>
+Lalu akan menjadi seperti ini saat user melakukan aksi
+model <- controller <- view <- user
+* user melakukan aksi
+* view memberi request pada controller untuk mengelola data
+* controller mengelola data yang disediakan oleh model
