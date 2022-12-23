@@ -1,7 +1,7 @@
 # DOKUMENTASI <br/> PROGRAM
 
 ## Deskripsi Singkat
-Aplikasi untuk menjual minuman Starbucks yang dilengkapi dengan halaman admin guna memonitoring sekaligus mengatur jalannya penjualan
+<br/>Aplikasi untuk menjual minuman Starbucks yang dilengkapi dengan halaman admin guna memonitoring sekaligus mengatur jalannya penjualan
 
 
 ## Tujuan Pembuatan
