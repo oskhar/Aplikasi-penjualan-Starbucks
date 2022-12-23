@@ -1,7 +1,5 @@
 # DOKUMENTASI PROGRAM
-#### <br/>Dede Latifa Isnaini - 11220910000034
-#### Muhamad Oskhar Mubarok - 11220910000042
-#### Muhammad Fatihul Choir - 11220910000121
+#### <br/>Dede Latifa Isnaini - 11220910000034<br/>Muhamad Oskhar Mubarok - 11220910000042<br/>Muhammad Fatihul Choir - 11220910000121
 #### <br/>Prihal terkait pembuatan dokumentasi:
 
 * **Title**: Tugas Akhir Mata kuliah Dasar Dasar Pemrograman
