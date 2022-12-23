@@ -16,14 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Current Database: `project_ddp`
---
-
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `project_ddp` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */;
-
-USE `project_ddp`;
-
---
 -- Table structure for table `akun`
 --
 
@@ -46,10 +38,13 @@ CREATE TABLE `akun` (
 LOCK TABLES `akun` WRITE;
 /*!40000 ALTER TABLE `akun` DISABLE KEYS */;
 INSERT INTO `akun` VALUES
+('','oskhar','',''),
+('aidil@gmail.com','pass12','aidil riyan','cinere'),
 ('choir@gmail.com','passwd','fatihul choir','Jember'),
 ('daffa@gmail.com','khardoang','daffa malik ak','ciputat'),
+('fajargans@gmail.com','fajar aja','fajar ganefi','pamulang'),
 ('isna@gmail.com','password','Dede Isna','Planet Bekasi'),
-('mohammed@gmail.com','oskhar.','Mohammed Nashwan','Yaman Selatan'),
+('mohammed@gmail.com','oskhar12','Mohammed Nashwan','Yaman Selatan'),
 ('oskhar@gmail.com','khardoang','Muhamad Oskhar Muabrok','Jakarta Barat'),
 ('tanjung@gmail.com','tjng123','Tanjung Arswendo','Sumatera Selatan');
 /*!40000 ALTER TABLE `akun` ENABLE KEYS */;
@@ -67,6 +62,8 @@ CREATE TABLE `minuman` (
   `name` varchar(70) NOT NULL,
   `rate` varchar(5) NOT NULL,
   `harga` varchar(30) NOT NULL,
+  `qty` varchar(6) NOT NULL,
+  `penjualan` varchar(6) NOT NULL,
   PRIMARY KEY (`img`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -78,14 +75,14 @@ CREATE TABLE `minuman` (
 LOCK TABLES `minuman` WRITE;
 /*!40000 ALTER TABLE `minuman` DISABLE KEYS */;
 INSERT INTO `minuman` VALUES
-('m1.png','<html>JAVA<br>CHIP</html>','4.3','60000'),
-('m2.png','<html>RASBERRY<br>SHAKEN</html>','4.4','60000'),
-('m3.png','<html>MANGGO<br>PASSION</html>','4.9','60000'),
-('m4.png','<html>GREEN<br>TEA</html>','4.1','60000'),
-('m5.png','<html>MOCHA<br>PRALINE</html>','4.8','60000'),
-('m6.png','<html>BLUEBERRY<br>MUFIN</html>','4.5','60000'),
-('m7.png','<html>DARK<br>MOCHA</html>','4.2','60000'),
-('m8.png','<html>CARAMEL<br>MACCHIATO</html>','4','60000');
+('m1.png','<html>JAVA<br>CHIP</html>','4.3','58000','60','0'),
+('m2.png','<html>RASBERRY<br>SHAKEN</html>','4.4','42000','40','0'),
+('m3.png','<html>MANGGO<br>PASSION</html>','4.9','45000','40','0'),
+('m4.png','<html>GREEN<br>TEA</html>','4.1','55000','35','0'),
+('m5.png','<html>MOCHA<br>PRALINE</html>','4.8','53000','35','0'),
+('m6.png','<html>BLUEBERRY<br>MUFIN</html>','4.5','45000','30','0'),
+('m7.png','<html>DARK<br>MOCHA</html>','4.2','58000','30','0'),
+('m8.png','<html>CARAMEL<br>MACCHIATO</html>','4','53000','25','0');
 /*!40000 ALTER TABLE `minuman` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -102,7 +99,7 @@ CREATE TABLE `riwayat` (
   `alamat` varchar(70) NOT NULL,
   `hargaTot` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -112,11 +109,10 @@ CREATE TABLE `riwayat` (
 LOCK TABLES `riwayat` WRITE;
 /*!40000 ALTER TABLE `riwayat` DISABLE KEYS */;
 INSERT INTO `riwayat` VALUES
-(1,'Muhamad Oskhar Muabrok','Jakarta Barat','720000'),
-(2,'Muhamad Oskhar Muabrok','Jakarta Barat','840000'),
-(3,'Muhamad Oskhar Muabrok','Jakarta Barat','120000'),
-(4,'Muhamad Oskhar Muabrok','Jakarta Barat','120000'),
-(5,'Muhamad Oskhar Muabrok','Jakarta Barat','60000');
+(65,'Dede Isna','Planet Bekasi','156000'),
+(66,'Muhamad Oskhar Muabrok','Jakarta Barat','45000'),
+(67,'Muhamad Oskhar Muabrok','Jakarta Barat','58000'),
+(68,'Dede Isna','Planet Bekasi','42000');
 /*!40000 ALTER TABLE `riwayat` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -129,4 +125,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-12-11  6:53:36
+-- Dump completed on 2022-12-23 23:15:17
