@@ -21,7 +21,7 @@ Pembuatan aplikasi ini bertujuan untuk:
 * Menerapkan pelajaran yang sudah dipelajari selama 1 semseter
 * Sedikit mencicipi perkerjaan di bidang IT
 
-Meski masih semester satu kami tetap mengutamakan kualitas dan mengerjakannya semaksimal mungkin sebagaimana semestinya seperti pada medan yang sesungguhnya
+> Meski masih semester satu kami tetap mengutamakan kualitas dan mengerjakannya semaksimal mungkin sebagaimana semestinya seperti pada medan yang sesungguhnya
 
 ## Struktur Folder
 
@@ -35,12 +35,22 @@ Demi pemeliharaan dan pengembangan aplikasi yang lebih terjaga, kami membagi fol
 * `lib`: folder untuk tempat depedensi program
 * `img`: folder untuk menyimpan semua gambar
 
-Catatan, file compile sebagai output akan dialihkan ke dalam folder `bin` sebagai binary folder default.
+**Note**: File compile sebagai output akan dialihkan ke dalam folder `bin` sebagai binary folder default.
 
 ## Cara memasang aplikasi
 
-* Persiapan instalasi
-  - `Install` jdk versi 11
-  - `Install` / `siapkan` IDE sebagai media pengembangan
-  - `Download` / `git-clone` Aplikasi penjualan Starbucks
-  - `Install` & `konfigurasi` database mysql
+**A. Persiapan instalasi**
+  1. **Install** jdk versi 11
+  2. **Install** / **siapkan** IDE sebagai media pengembangan
+  3. **Download** / **git-clone** Aplikasi penjualan Starbucks
+  4. **Install** & **konfigurasi** database mysql
+    a. **import** file sql backup yang berada di folder lib nama file "project_ddp.sql"
+
+**B. Konfigurasi sistem**
+  1. **Masuk** folder src dan masuk ke folder config
+  2. **Buka** file java.properties
+  3. **Ubah** pathImg sesuai dengan lokasi folder img
+  4 **Ubah** cookie sesuai dengan lokasi file cookie.properties
+  
+    
+    
