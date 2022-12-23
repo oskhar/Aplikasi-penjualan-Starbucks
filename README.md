@@ -11,7 +11,7 @@
 * **Date**: 14 Desember 2022
 * **Confidentiality**: Comercial
 
-### &#169 Universitas Islam Negeri Jakarta 2022
+### Ⓒ Universitas Islam Negeri Jakarta 2022
 
 ## Deskripsi Singkat
 
