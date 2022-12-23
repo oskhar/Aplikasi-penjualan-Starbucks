@@ -13,26 +13,26 @@ Pada dokumentasi ini saya akan menjelaskan bagaimana cara untuk menggunakan apli
   1. **Masukan** username/email dan password yang sesuai untuk menuju ke halaman selanjutnya<br/>
   ![Ini adalah Gambar](img/l1.png)
   2. **Jika** anda belum memiliki akun anda dapat menuju ke halaman buat akun, untuk membuat akun anda sendiri secara gratis<br/>
-  ![Ini adalah Gambar](img/l2.png)
-    - <br/>Anda tidak dapat menggunakan email yang sudah digunakan
-    - <br/>Password harus terdiri lebih dari 6 karakter
-    - <br/>Isi input pada ulangi password harus sesuai dan serupa dengan Password
-    - <br/>Akan muncul notifikasi data invalid saat user tidak memasukan apapun pada inputpng)
+  ![Ini adalah Gambar](img/l2.png)<br/>
+    - Anda tidak dapat menggunakan email yang sudah digunakan<br/>
+    - Password harus terdiri lebih dari 6 karakter<br/>
+    - Isi input pada ulangi password harus sesuai dan serupa dengan Password<br/>
+    - Akan muncul notifikasi data invalid saat user tidak memasukan apapun pada inputpng)
 png)
 png)
 png)
   3. **Jika** anda melupakan password atau ingin mengubah password yang sudah tersedia, anda dapat mengaturnya di halaman ubah password<br/>
-  ![Ini adalah Gambar](img/l3.png)
-    - <br/>Akan muncul notifikasi data invalid saat user tidak memasukan data
-    - <br/>Email yang tidak terdaftar tidak dapat melakukan penggantian password 
-    - <br/>Password harus terdiri lebih dari 6 karakter
+  ![Ini adalah Gambar](img/l3.png)<br/>
+    - Akan muncul notifikasi data invalid saat user tidak memasukan data<br/>
+    - Email yang tidak terdaftar tidak dapat melakukan penggantian password <br/>
+    - Password harus terdiri lebih dari 6 karakter
   4. **Admin** bisa langsung menuju halaman admin dan memasukan password yang sesuai untuk autentikasi<br/>
   ![Ini adalah Gambar](img/l4.png)
 **B. Halaman menu**
   1. **Ada** cukup banyak minuman yang dapat anda beli sesuai keinginan, Click salah satu untuk membeli produk yang anda pilih
-  2. **Logo** keranjang belanjaan dapat anda click untuk menuju halaman pembayaran
-    - <br/>**Logo** akan memiliki notifikasi unik saat keranjang terisi
-    - <br/>**Notifikasi** pada logo akan hilang jika isi keranjang anda kosongkan kembali
+  2. **Logo** keranjang belanjaan dapat anda click untuk menuju halaman pembayaran<br/>
+    - **Logo** akan memiliki notifikasi unik saat keranjang terisi<br/>
+    - **Notifikasi** pada logo akan hilang jika isi keranjang anda kosongkan kembali
 **C. Halaman beli**
   1. **User** dapat mengatur jumlah produk yang dibeli sesuai kebutuhan dengan tombol plus dan tombol minus
   2. **User** bisa langsung menuju halaman bayar dengan mengclick tombol `beli`
