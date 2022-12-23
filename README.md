@@ -1,7 +1,7 @@
 # DOKUMENTASI PROGRAM
-### <br/>Dede Latifa Isnaini - 11220910000034
-### Muhamad Oskhar Mubarok - 11220910000042
-### Muhammad Fatihul Choir - 11220910000121
+#### <br/>Dede Latifa Isnaini - 11220910000034
+#### Muhamad Oskhar Mubarok - 11220910000042
+#### Muhammad Fatihul Choir - 11220910000121
 #### <br/>Prihal terkait pembuatan dokumentasi:
 
 * **Title**: Tugas Akhir Mata kuliah Dasar Dasar Pemrograman
@@ -11,7 +11,7 @@
 
 ### <br/>Ⓒ Universitas Islam Negeri Jakarta 2022
 
-## Deskripsi Singkat
+## <br/>Deskripsi Singkat
 
 Aplikasi untuk menjual minuman Starbucks yang dilengkapi dengan halaman admin guna memonitoring sekaligus mengatur jalannya penjualan
 
