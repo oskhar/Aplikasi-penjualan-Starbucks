@@ -29,11 +29,13 @@ public class AdminModel extends KelasModel {
         databaseRiwayat = sqlGetAll("riwayat", isiData);
 
         // Set database as array
-        isiData = new String[4];
+        isiData = new String[6];
         isiData[0] = "img";
         isiData[1] = "name";
         isiData[2] = "rate";
         isiData[3] = "harga";
+        isiData[4] = "qty";
+        isiData[5] = "penjualan";
         databaseMinuman = sqlGetAll("minuman", isiData);
     
     }

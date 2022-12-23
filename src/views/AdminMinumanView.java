@@ -26,7 +26,7 @@ public class AdminMinumanView extends KelasView implements ActionListener {
     public AdminMinumanView() {
 
         // Variable
-        String[] judul = {"Image Path", "Nama", "Rate", "Harga"};
+        String[] judul = {"Image Path", "Nama", "Rate", "Harga", "QTY", "Penjualan"};
 
         // Set container
         setContainer(width, height);

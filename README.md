@@ -37,20 +37,21 @@ Demi pemeliharaan dan pengembangan aplikasi yang lebih terjaga, kami membagi fol
 
 **Note**: File compile sebagai output akan dialihkan ke dalam folder `bin` sebagai binary folder default.
 
-## Cara memasang aplikasi
+## Pemasangan & Penggunaan Aplikasi
 
 **A. Persiapan instalasi**
-  1. **Install** jdk versi 11
-  2. **Install** / **siapkan** IDE sebagai media pengembangan
-  3. **Download** / **git-clone** Aplikasi penjualan Starbucks
-  4. **Install** & **konfigurasi** database mysql
-    a. **import** file sql backup yang berada di folder lib nama file "project_ddp.sql"
+  **1. Install** jdk versi 11
+  **2. Install** / **siapkan** IDE sebagai media pengembangan
+  **3. Download** / **git-clone** Aplikasi penjualan Starbucks
+  **4. Install** & **konfigurasi** database mysql
+    **a. import** file sql backup yang berada di folder lib nama file "project_ddp.sql"
 
 **B. Konfigurasi sistem**
-  1. **Masuk** folder src dan masuk ke folder config
-  2. **Buka** file java.properties
-  3. **Ubah** pathImg sesuai dengan lokasi folder img
-  4 **Ubah** cookie sesuai dengan lokasi file cookie.properties
+  **1. Masuk** folder src dan masuk ke folder config
+  **2. Buka** file java.properties
+  **3. Ubah** pathImg sesuai dengan lokasi folder img
+  **4. Ubah** cookie sesuai dengan lokasi file cookie.properties
+  **5. Masuk** folder Models dan buka file KelasMode.java
   
     
     
