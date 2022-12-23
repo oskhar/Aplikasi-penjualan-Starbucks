@@ -48,10 +48,10 @@ Demi pemeliharaan dan pengembangan aplikasi yang lebih terjaga, kami membagi fol
   2. **Install** / **siapkan** IDE sebagai media pengembangan
   3. **Download** / **git-clone** Aplikasi penjualan Starbucks<br/>
   ![Ini Gambar](docs/img/d0.png)
-  4. **Install** & **konfigurasi** database mysql
-    + **Import** file sql backup yang berada di folder "lib" dengan nama file "project_ddp.sql"<br/>
-    ![Ini Gambar](docs/img/d1.png)
-    + **Anda** dapat mengimportnya menggunakan cara yang anda suka
+  4. **Install** & **konfigurasi** database mysql<br/>
+    - **Import** file sql backup yang berada di folder "lib" dengan nama file "project_ddp.sql"<br/>
+    ![Ini Gambar](docs/img/d1.png)<br/>
+    - **Anda** dapat mengimportnya menggunakan cara yang anda suka
 
 **B. Konfigurasi sistem**
   1. **Masuk** folder src dan masuk ke folder config<br/>
