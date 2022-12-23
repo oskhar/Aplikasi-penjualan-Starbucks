@@ -1,10 +1,20 @@
-# DOKUMENTASI <br/> PROGRAM
+# DOKUMENTASI PROGRAM
+
+### Dede Latifa Isnaini <br/> Muhamad Oskhar Mubarok <br/> Muhammad Fatihul Choir
+
+#### Prihal terkait pembuatan dokumentasi
+
+  `Title`: Tugas Akhir Mata kuliah Dasar Dasar Pemrograman
+  `Application`: Penjualan Minuman Starbucks
+  `Date`: 14 Desember 2022
+  `Confidentiality`: Comercial
 
 ## Deskripsi Singkat
-<br/>Aplikasi untuk menjual minuman Starbucks yang dilengkapi dengan halaman admin guna memonitoring sekaligus mengatur jalannya penjualan
 
+Aplikasi untuk menjual minuman Starbucks yang dilengkapi dengan halaman admin guna memonitoring sekaligus mengatur jalannya penjualan
 
 ## Tujuan Pembuatan
+
 Pembuatan aplikasi ini bertujuan untuk:
 * Menyelesaikan `tugas akhir` semester 1
 * Mengasah kemampuan `kerja sama tim` dalam perkerjaan dibidang IT
