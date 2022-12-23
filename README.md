@@ -14,7 +14,7 @@
 Aplikasi untuk menjual minuman Starbucks yang dilengkapi dengan halaman admin guna memonitoring sekaligus mengatur jalannya penjualan
 
 > **Note**: Halaman ini hanya berisi cara memasang aplikasi
-> * [Cara Pakai Aplikasi](/docs/caraPakai.md)
+> * [Cara Menggunakan Aplikasi](/docs/caraPakai.md)
 > * [Konsep Pembuatan Aplikasi](/docs/dokumentasiSystem.md)
 
 ## Tujuan Pembuatan
@@ -41,7 +41,7 @@ Demi pemeliharaan dan pengembangan aplikasi yang lebih terjaga, kami membagi fol
 
 **Note**: File compile sebagai output akan dialihkan ke dalam folder `bin` sebagai binary folder default.
 
-## Pemasangan & Penggunaan Aplikasi
+## Pemasangan Aplikasi
 
 **A. Persiapan instalasi**
   1. **Install** jdk versi 11
