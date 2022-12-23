@@ -13,13 +13,17 @@
 
 Aplikasi untuk menjual minuman Starbucks yang dilengkapi dengan halaman admin guna memonitoring sekaligus mengatur jalannya penjualan
 
+**Note**: Halaman ini hanya berisi cara memasang aplikasi
+[Cara Pakai Aplikasi](/docs/caraPakai.md)
+[Konsep Pembuatan Aplikasi](/docs/dokumentasiSystem.md)
+
 ## Tujuan Pembuatan
 
 Pembuatan aplikasi ini bertujuan untuk:
 * Menyelesaikan `tugas akhir` semester 1
-* Mengasah kemampuan `kerja sama tim` dalam perkerjaan dibidang IT
-* Menerapkan pelajaran yang sudah dipelajari selama 1 semseter
-* Sedikit mencicipi perkerjaan di bidang IT
+* Mengasah kemampuan `kerja sama tim` dalam perkerjaan di bidang IT
+* `Menerapkan` pelajaran yang sudah dipelajari selama 1 semseter
+* Sedikit mencicipi perkerjaan di `bidang IT`
 
 > Meski masih semester satu kami tetap mengutamakan kualitas dan mengerjakannya semaksimal mungkin sebagaimana semestinya seperti pada medan yang sesungguhnya
 
@@ -62,5 +66,5 @@ Demi pemeliharaan dan pengembangan aplikasi yang lebih terjaga, kami membagi fol
   6. **Masuk** folder Models dan buka file KelasMode.java<br/>
   ![Ini Gambar](docs/img/d7.png)
   
-    
+
     
