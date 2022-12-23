@@ -4,10 +4,10 @@
 
 #### Prihal terkait pembuatan dokumentasi
 
-  `Title`: Tugas Akhir Mata kuliah Dasar Dasar Pemrograman
-  `Application`: Penjualan Minuman Starbucks
-  `Date`: 14 Desember 2022
-  `Confidentiality`: Comercial
+*`Title`: Tugas Akhir Mata kuliah Dasar Dasar Pemrograman
+*`Application`: Penjualan Minuman Starbucks
+*`Date`: 14 Desember 2022
+*`Confidentiality`: Comercial
 
 ## Deskripsi Singkat
 
