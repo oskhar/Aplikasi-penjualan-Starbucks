@@ -14,6 +14,7 @@ Pembahasan akan dimulai dari pengorganisaian file. Di dalam folder src ada folde
 Lalu ada folder models, views, dan controllers yang masing masing menampung bagian bagian tertentu tanpa bercampur satu sama lain. Sehingga memudahkan perbaikan bug dan hanya perlu membuka folder yang diperlukan saat error terjadi. Yang lebih penting lagi setiap folder memiliki kelas parent masing masing contohnya pada Folder models yang memiliki kelas parent berupa "KelasModel.java", yang dimana program ini berisi semua konfigurasi terhadap database serta method method yang diperlukan untuk mengatur isi data pada database.
 
 '''java
+
 public void sqlCon () {
 
         // Variable
@@ -150,4 +151,5 @@ public void sqlCon () {
         }
 
     }
+
 '''
