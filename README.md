@@ -40,25 +40,25 @@ Demi pemeliharaan dan pengembangan aplikasi yang lebih terjaga, kami membagi fol
 ## Pemasangan & Penggunaan Aplikasi
 
 **A. Persiapan instalasi**
-  **1. Install** jdk versi 11
-  **2. Install** / **siapkan** IDE sebagai media pengembangan
-  **3. Download** / **git-clone** Aplikasi penjualan Starbucks
-  **4. Install** & **konfigurasi** database mysql
-    **a. import** file sql backup yang berada di folder lib nama file "project_ddp.sql"
+  1. **Install** jdk versi 11
+  2. **Install** / **siapkan** IDE sebagai media pengembangan
+  3. **Download** / **git-clone** Aplikasi penjualan Starbucks
+  4. **Install** & **konfigurasi** database mysql
+    a. **import** file sql backup yang berada di folder lib nama file "project_ddp.sql"
     ![Ini Gambar](docs/img/d1.png)
 
 **B. Konfigurasi sistem**
-  **1. Masuk** folder src dan masuk ke folder config
+  1. **Masuk** folder src dan masuk ke folder config
   ![Ini Gambar](docs/img/d2.png)
-  **2. Buka** file java.properties
+  2. **Buka** file java.properties
   ![Ini Gambar](docs/img/d3.png)
-  **3. Ubah** pathImg sesuai dengan lokasi folder img
+  3. **Ubah** pathImg sesuai dengan lokasi folder img
   ![Ini Gambar](docs/img/d4.png)
-  **4. Ubah** cookie sesuai dengan lokasi file cookie.properties
+  4. **Ubah** cookie sesuai dengan lokasi file cookie.properties
   ![Ini Gambar](docs/img/d5.png)
-  **5. Atur** Driver dan sql sesuai selera anda
+  5. **Atur** Driver dan sql sesuai selera anda
   ![Ini Gambar](docs/img/d6.png)
-  **6. Masuk** folder Models dan buka file KelasMode.java
+  6. **Masuk** folder Models dan buka file KelasMode.java
   ![Ini Gambar](docs/img/d7.png)
   
     
