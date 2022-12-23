@@ -1,12 +1,10 @@
-# DOKUMENTASI
-# PROGRAM
+# DOKUMENTASI <br/> PROGRAM
 
 ## Deskripsi Singkat
-
 Aplikasi untuk menjual minuman Starbucks yang dilengkapi dengan halaman admin guna memonitoring sekaligus mengatur jalannya penjualan
 
-## Tujuan Pembuatan
 
+## Tujuan Pembuatan
 Pembuatan aplikasi ini bertujuan untuk:
 * Menyelesaikan `tugas akhir` semester 1
 * Mengasah kemampuan `kerja sama tim` dalam perkerjaan dibidang IT
