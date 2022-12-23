@@ -17,10 +17,7 @@ Pada dokumentasi ini saya akan menjelaskan bagaimana cara untuk menggunakan apli
     - Anda tidak dapat menggunakan email yang sudah digunakan<br/>
     - Password harus terdiri lebih dari 6 karakter<br/>
     - Isi input pada ulangi password harus sesuai dan serupa dengan Password<br/>
-    - Akan muncul notifikasi data invalid saat user tidak memasukan apapun pada inputpng)
-png)
-png)
-png)
+    - Akan muncul notifikasi data invalid saat user tidak memasukan apapun pada input
   3. **Jika** anda melupakan password atau ingin mengubah password yang sudah tersedia, anda dapat mengaturnya di halaman ubah password<br/>
   ![Ini adalah Gambar](img/l3.png)<br/>
     - Akan muncul notifikasi data invalid saat user tidak memasukan data<br/>
