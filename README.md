@@ -13,9 +13,9 @@
 
 Aplikasi untuk menjual minuman Starbucks yang dilengkapi dengan halaman admin guna memonitoring sekaligus mengatur jalannya penjualan
 
-**Note**: Halaman ini hanya berisi cara memasang aplikasi
-[Cara Pakai Aplikasi](/docs/caraPakai.md)
-[Konsep Pembuatan Aplikasi](/docs/dokumentasiSystem.md)
+> **Note**: Halaman ini hanya berisi cara memasang aplikasi
+> [Cara Pakai Aplikasi](/docs/caraPakai.md)
+> [Konsep Pembuatan Aplikasi](/docs/dokumentasiSystem.md)
 
 ## Tujuan Pembuatan
 
