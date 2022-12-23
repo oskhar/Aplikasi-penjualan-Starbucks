@@ -1,6 +1,8 @@
 # DOKUMENTASI PROGRAM
 
-### Dede Latifa Isnaini <br/> Muhamad Oskhar Mubarok <br/> Muhammad Fatihul Choir
+### Dede Latifa Isnaini - 11220910000034
+### Muhamad Oskhar Mubarok - 11220910000042 
+### Muhammad Fatihul Choir - 11220910000121
 
 #### Prihal terkait pembuatan dokumentasi:
 
@@ -9,9 +11,7 @@
 * **Date**: 14 Desember 2022
 * **Confidentiality**: Comercial
 
-<p align="center">
-### (C) Universitas Islam Negeri Jakarta 2022
-</p>
+### &#169 Universitas Islam Negeri Jakarta 2022
 
 ## Deskripsi Singkat
 
