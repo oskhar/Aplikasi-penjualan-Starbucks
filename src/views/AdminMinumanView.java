@@ -22,7 +22,7 @@ public class AdminMinumanView extends KelasView implements ActionListener {
     int height = control.model.height;
     String pathImg = control.model.locPathImg;
     
-    // CONTAINER
+    // CONSTRUCTUR
     public AdminMinumanView() {
 
         // Variable

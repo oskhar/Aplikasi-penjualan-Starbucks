@@ -1,4 +1,6 @@
-# Aplikasi Penjualan Starbucks
+# APLIKASI PENJUALAN STARBUCKS
+
+## Deskripsi Singkat
 
 Aplikasi untuk menjual minuman Starbucks yang dilengkapi dengan halaman admin guna memonitoring sekaligus mengatur jalannya penjualan
 
@@ -30,5 +32,6 @@ Catatan, file compile sebagai output akan dialihkan ke dalam folder `bin` sebaga
 
 * Persiapan instalasi
   - `Install` jdk versi 11
-  - `Siapkan` / `install` IDE sebagai media pengembangan
+  - `Install` / `siapkan` IDE sebagai media pengembangan
   - `Download` / `git-clone` Aplikasi penjualan Starbucks
+  - `Install` & `konfigurasi` database mysql
