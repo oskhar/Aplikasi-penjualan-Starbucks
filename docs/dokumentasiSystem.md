@@ -8,7 +8,7 @@ Pada program aplikasi ini kami mencoba untuk menerapkan metode pemrograman MVC y
 
 Pembahasan akan dimulai dari pengorganisaian file. Di dalam folder src ada folder config untuk mengkonfigurasi system dengan sangat fleksibel tanpa harus merubah keseluruhan program, ini akan sangat mempermudah pengembangan jangka panjang.
 
-> Note: Bahkan saat ingin mengganti jenis database maupun mengganti tema warna itu sangat mungkin untuk dilakukan
+> **Note**: Bahkan saat ingin mengganti jenis database maupun mengganti tema warna itu sangat mungkin untuk dilakukan
 > Selain itu lokasi folder pada project tidak selalu berada di posisi yang serupa, bahkan penanda folder linux dengan folder windows sangat jauh berbeda, mengingat saya dengan kawan kawan pengembang tidak menggunakan Oprating System yanng sama
 
 Lalu ada folder models, views, dan controllers yang masing masing menampung bagian bagian tertentu tanpa bercampur satu sama lain. Sehingga memudahkan perbaikan bug dan hanya perlu membuka folder yang diperlukan saat error terjadi. Yang lebih penting lagi setiap folder memiliki kelas parent masing masing contohnya pada Folder models yang memiliki kelas parent berupa "KelasModel.java", yang dimana program ini berisi semua konfigurasi terhadap database serta method method yang diperlukan untuk mengatur isi data pada database. <br/>
