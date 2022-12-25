@@ -8,17 +8,16 @@ Pada program aplikasi ini kami mencoba untuk menerapkan metode pemrograman MVC y
 
 Pembahasan akan dimulai dari pengorganisaian file. Di dalam folder src ada folder config untuk mengkonfigurasi system dengan sangat fleksibel tanpa harus merubah keseluruhan program, ini akan sangat mempermudah pengembangan jangka panjang.
 
-> Bahkan saat ingin mengganti jenis database maupun mengganti tema warna itu sangat mungkin untuk dilakukan
+> Note: Bahkan saat ingin mengganti jenis database maupun mengganti tema warna itu sangat mungkin untuk dilakukan
 > Selain itu lokasi folder pada project tidak selalu berada di posisi yang serupa, bahkan penanda folder linux dengan folder windows sangat jauh berbeda, mengingat saya dengan kawan kawan pengembang tidak menggunakan Oprating System yanng sama
 
-Lalu ada folder models, views, dan controllers yang masing masing menampung bagian bagian tertentu tanpa bercampur satu sama lain. Sehingga memudahkan perbaikan bug dan hanya perlu membuka folder yang diperlukan saat error terjadi. Yang lebih penting lagi setiap folder memiliki kelas parent masing masing contohnya pada Folder models yang memiliki kelas parent berupa "KelasModel.java", yang dimana program ini berisi semua konfigurasi terhadap database serta method method yang diperlukan untuk mengatur isi data pada database.
+Lalu ada folder models, views, dan controllers yang masing masing menampung bagian bagian tertentu tanpa bercampur satu sama lain. Sehingga memudahkan perbaikan bug dan hanya perlu membuka folder yang diperlukan saat error terjadi. Yang lebih penting lagi setiap folder memiliki kelas parent masing masing contohnya pada Folder models yang memiliki kelas parent berupa "KelasModel.java", yang dimana program ini berisi semua konfigurasi terhadap database serta method method yang diperlukan untuk mengatur isi data pada database. <br/>
 
+`sqlCon`: Menghubungkan program ke database sql sekaligus menetapkan value pada atribut
 ```java
 
-    // METHOD
     public void sqlCon () {
 
-        // Variable
         config();
         locPathImg = prop.getProperty("pathImg");
         cookie = prop.getProperty("cookie");
@@ -42,11 +41,13 @@ Lalu ada folder models, views, dan controllers yang masing masing menampung bagi
         }
 
     }
+```
 
-    // METHOD
+`config`: Sebagai konfigurasi awal dengan database sql
+```java
+
     public void config () {
 
-        // Access data from java.properties
         try {
             prop = new Properties();
             File file = new File("src/config/java.properties");
@@ -60,11 +61,12 @@ Lalu ada folder models, views, dan controllers yang masing masing menampung bagi
         }
 
     }
+```
 
-    // METHOD
+`sqlUpdate`: Update atau mengubah data column pada row tertentu
+```java
     public void sqlUpdate (String table, String data, String lokasi) {
 
-        // Execute query sql
         try {
             sql = "UPDATE " + table + " SET " + data + " WHERE " + lokasi;
             stmt.executeUpdate(sql);
@@ -75,15 +77,15 @@ Lalu ada folder models, views, dan controllers yang masing masing menampung bagi
         }
 
     }
+```
 
-    // METHOD 
+`sqlGetAll`: Mengambil semua tabel dalam database sql menjadi array dua dimensi
+```java
     public String[][] sqlGetAll (String table, String[] index) {
 
-        // Variable
         String[][] data = new String[getCount(table)][index.length];
         int i = 0;
 
-        // Execure query sql
         try{
             sql = "SELECT * FROM " + table;
             rs = stmt.executeQuery(sql);
@@ -104,11 +106,12 @@ Lalu ada folder models, views, dan controllers yang masing masing menampung bagi
         }
 
     }
+```
 
-    // METHOD
+`getCount`: Mendapatkan panjang row pada database
+```java
     public int getCount (String table) {
 
-        // Execute query sql
         try {
             String strSql = "SELECT count(*) FROM " + table;
             ResultSet fakeRs = stmt.executeQuery(strSql);
@@ -122,11 +125,12 @@ Lalu ada folder models, views, dan controllers yang masing masing menampung bagi
 
         }
     }
+```
 
-    // METHOD
+`sqlInsert`: Menambah data baru pada table dalam database
+```java
     public void sqlInsert (String table, String data) {
 
-        // Execute query sql
         try {
             sql = "INSERT INTO " + table + " VALUES (" + data +")";
             stmt.executeUpdate(sql);
@@ -137,11 +141,12 @@ Lalu ada folder models, views, dan controllers yang masing masing menampung bagi
         }
 
     }
+```
 
-    // METHOD
+`sqlDeleteAll`: Menghapus semua value pada table yang dituju
+```java
     public void sqlDeleteAll (String table) {
 
-        // Execute query sql
         try {
             sql = "DELETE FROM " + table;
             stmt.executeUpdate(sql);
@@ -154,14 +159,6 @@ Lalu ada folder models, views, dan controllers yang masing masing menampung bagi
     }
 
 ```
-
-* `sqlCon`: Menghubungkan program ke database sql sekaligus menetapkan value pada atribut
-* `config`: Sebagai konfigurasi awal dengan database sql
-* `sqlUpdate`: Update atau mengubah data column pada row tertentu
-* `sqlGetAll`: Mengambil semua tabel dalam database sql menjadi array dua dimensi
-* `getCount`: Mendapatkan panjang row pada database
-* `sqlInsert`: Menambah data baru pada table dalam database
-* `sqlDeleteAll`: Menghapus semua value pada table yang dituju
 
 Dengan begini saya hanya perlu memakai method pada file Controller saat saya ingin mengatur database melalui kontroler. 
 
