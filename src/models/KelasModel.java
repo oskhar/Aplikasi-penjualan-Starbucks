@@ -28,7 +28,7 @@ public class KelasModel {
     public int width;
     public int height;
 
-    // METHOD koneksi mysql
+    // METHOD untuk koneksi dari java ke mysql
     public void sqlCon () {
 
         // Variable
@@ -56,7 +56,7 @@ public class KelasModel {
 
     }
 
-    // METHOD config
+    // METHOD untuk mengakses file config
     public void config () {
 
         // Access data from java.properties
@@ -74,7 +74,7 @@ public class KelasModel {
 
     }
 
-    // METHOD update data
+    // METHOD untuk merubah data
     public void sqlUpdate (String table, String data, String lokasi) {
 
         // Execute query sql
@@ -89,7 +89,7 @@ public class KelasModel {
 
     }
 
-    // METHOD 
+    // METHOD untuk mendapatkan data
     public String[][] sqlGetAll (String table, String[] index) {
 
         // Variable
@@ -118,7 +118,7 @@ public class KelasModel {
 
     }
 
-    // METHOD
+    // METHOD untuk mendapatkan banyaknya data dalam
     public int getCount (String table) {
 
         // Execute query sql
@@ -136,7 +136,7 @@ public class KelasModel {
         }
     }
 
-    // METHOD
+    // METHOD untuk menambahkan data
     public void sqlInsert (String table, String data) {
 
         // Execute query sql
@@ -151,7 +151,7 @@ public class KelasModel {
 
     }
 
-    // METHOD
+    // METHOD untuk menghapus semua data
     public void sqlDeleteAll (String table) {
 
         // Execute query sql

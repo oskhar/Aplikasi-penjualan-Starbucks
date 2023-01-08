@@ -1,5 +1,6 @@
 package models;
 
+// KELAS
 public class BeliModel extends KelasModel{
     
     // ATRIBUTE
@@ -15,10 +16,6 @@ public class BeliModel extends KelasModel{
         String[] isiData = {"img", "name", "rate", "harga"};
         database = sqlGetAll("minuman", isiData);
         
-    }
-
-    public static void main(String[] args) {
-        new BeliModel();
     }
     
 }

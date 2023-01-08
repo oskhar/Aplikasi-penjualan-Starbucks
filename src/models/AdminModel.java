@@ -1,5 +1,6 @@
 package models;
 
+// KELAS
 public class AdminModel extends KelasModel {
     
     // ATRIBUTE

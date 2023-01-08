@@ -1,5 +1,7 @@
+// PACKAGE
 package models;
 
+// KELAS
 public class BayarModel extends KelasModel{
     
     // ATRIBUTE
@@ -8,17 +10,13 @@ public class BayarModel extends KelasModel{
     // CONSTRUCTUR
     public BayarModel () {
         
-        // Connect to sql server
+        // Konek dengan sql server
         sqlCon();
 
-        // Set database as array
+        // Mengambil database sebagai array 2 dimensi
         String[] isiData = {"img", "name", "rate", "harga"};
         database = sqlGetAll("minuman", isiData);
         
-    }
-
-    public static void main(String[] args) {
-        new BayarModel();
     }
     
 }
