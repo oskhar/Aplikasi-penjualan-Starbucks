@@ -18,6 +18,7 @@ public class KelasView extends JFrame {
     Color putih = new Color(255, 250, 248);
     Color hijau = new Color(40, 167, 69);
     Color merah = new Color(220, 53, 69);
+    Color abuabu = new Color(52, 58, 64);
     Color transparent = new Color(0, 0, 0, 0);
     
     // METHOD
@@ -66,7 +67,6 @@ public class KelasView extends JFrame {
     // METHOD
     public void layoutTombol(JButton el, int x, int y, int wi, int he, Color warnaBack, Color warnaText, int size) {
 
-        // Set layout
         el.setBounds(x, y, wi, he);
         el.setBorder(null);
         el.setFocusable(false);
@@ -79,7 +79,6 @@ public class KelasView extends JFrame {
     // METHOD
     public void layoutImg(JButton el, int x, int y, int wi, int he) {
 
-        // Set layout
         el.setBounds(x, y, wi, he);
         el.setBorder(null);
         el.setBorderPainted(false);

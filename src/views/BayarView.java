@@ -231,8 +231,8 @@ public class BayarView extends KelasView implements ActionListener {
                 listHarga[i] = Integer.parseInt(control.totalHarga(index, (angka + 1)));
                 total.setText("<html>total: <b>Rp </b>"+manipHarga(control.sum(listHarga))+"<b>.-</b></html>");
 
-                if (control.sum(listHarga).equals("0"))
-                    bayar.setBackground(new Color(52, 58, 64));
+                if (!control.sum(listHarga).equals("0"))
+                    bayar.setBackground(hijau);
 
             } else if (source == krn[i]) {
                 if (angka > 0) {
@@ -244,7 +244,7 @@ public class BayarView extends KelasView implements ActionListener {
 
                 }
                 if (control.sum(listHarga).equals("0"))
-                    bayar.setBackground(new Color(52, 58, 64));
+                    bayar.setBackground(abuabu);
 
             }
         }

@@ -27,14 +27,15 @@ public class KelasModel {
     public String cookie;
     public int width;
     public int height;
+    private String path;
 
     // METHOD untuk koneksi dari java ke mysql
     public void sqlCon () {
 
         // Variable
         config();
-        locPathImg = prop.getProperty("pathImg");
-        cookie = prop.getProperty("cookie");
+        locPathImg = System.getProperty("os.name").equals("Linux") ? path + "/img/" : path + "\\img\\";
+        cookie = System.getProperty("os.name").equals("Linux") ? path + "/src/config/cookie.properties" : path + "\\src\\config\\cookie.properties";
         width = Integer.parseInt(prop.getProperty("width"));
         height = Integer.parseInt(prop.getProperty("height"));
         String url = prop.getProperty("url");
@@ -59,12 +60,13 @@ public class KelasModel {
     // METHOD untuk mengakses file config
     public void config () {
 
-        // Access data from java.properties
+        // Access data from config.properties
         try {
             prop = new Properties();
-            File file = new File("src/config/java.properties");
-            String path = file.getCanonicalPath();
-            prop.load(new FileInputStream(path));
+            File file = new File("");
+            path = file.getCanonicalPath();
+            String pathConfig = System.getProperty("os.name").equals("Linux") ? path + "/src/config/config.properties" : path + "\\src\\config\\config.properties";
+            prop.load(new FileInputStream(pathConfig));
 
         } catch (Exception ex) {
             System.out.println("Configurasi gagal!");
