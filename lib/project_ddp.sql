@@ -1,6 +1,6 @@
 -- Buat database dengan nama project_ddp
-CREATE DATABASE project_ddp;
-USE project_ddp;
+-- CREATE DATABASE project_ddp;
+-- USE project_ddp;
 --
 -- Table structure for table `akun`
 --
@@ -15,14 +15,14 @@ CREATE TABLE `akun` (
   `alamat` varchar(70) NOT NULL,
   PRIMARY KEY (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+-- /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `akun`
 --
 
 LOCK TABLES `akun` WRITE;
-/*!40000 ALTER TABLE `akun` DISABLE KEYS */;
+-- /*!40000 ALTER TABLE `akun` DISABLE KEYS */;
 INSERT INTO `akun` VALUES
 ('','oskhar','',''),
 ('aidil@gmail.com','pass12','aidil riyan','cinere'),
@@ -33,7 +33,7 @@ INSERT INTO `akun` VALUES
 ('mohammed@gmail.com','oskhar12','Mohammed Nashwan','Yaman Selatan'),
 ('oskhar@gmail.com','khardoang','Muhamad Oskhar Muabrok','Jakarta Barat'),
 ('tanjung@gmail.com','tjng123','Tanjung Arswendo','Sumatera Selatan');
-/*!40000 ALTER TABLE `akun` ENABLE KEYS */;
+-- /*!40000 ALTER TABLE `akun` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -41,8 +41,8 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `minuman`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+-- /*!40101 SET @saved_cs_client     = @@character_set_client */;
+-- /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `minuman` (
   `img` varchar(40) NOT NULL,
   `name` varchar(70) NOT NULL,
@@ -52,14 +52,14 @@ CREATE TABLE `minuman` (
   `penjualan` varchar(6) NOT NULL,
   PRIMARY KEY (`img`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+-- /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `minuman`
 --
 
 LOCK TABLES `minuman` WRITE;
-/*!40000 ALTER TABLE `minuman` DISABLE KEYS */;
+-- /*!40000 ALTER TABLE `minuman` DISABLE KEYS */;
 INSERT INTO `minuman` VALUES
 ('m1.png','<html>JAVA<br>CHIP</html>','4.3','58000','60','0'),
 ('m2.png','<html>RASBERRY<br>SHAKEN</html>','4.4','42000','40','0'),
@@ -69,7 +69,7 @@ INSERT INTO `minuman` VALUES
 ('m6.png','<html>BLUEBERRY<br>MUFIN</html>','4.5','45000','30','0'),
 ('m7.png','<html>DARK<br>MOCHA</html>','4.2','58000','30','0'),
 ('m8.png','<html>CARAMEL<br>MACCHIATO</html>','4','53000','25','0');
-/*!40000 ALTER TABLE `minuman` ENABLE KEYS */;
+-- /*!40000 ALTER TABLE `minuman` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -77,8 +77,8 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `riwayat`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+-- /*!40101 SET @saved_cs_client     = @@character_set_client */;
+-- /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `riwayat` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nama` varchar(70) NOT NULL,
@@ -86,29 +86,29 @@ CREATE TABLE `riwayat` (
   `hargaTot` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+-- /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `riwayat`
 --
 
 LOCK TABLES `riwayat` WRITE;
-/*!40000 ALTER TABLE `riwayat` DISABLE KEYS */;
+-- /*!40000 ALTER TABLE `riwayat` DISABLE KEYS */;
 INSERT INTO `riwayat` VALUES
 (65,'Dede Isna','Planet Bekasi','156000'),
 (66,'Muhamad Oskhar Muabrok','Jakarta Barat','45000'),
 (67,'Muhamad Oskhar Muabrok','Jakarta Barat','58000'),
 (68,'Dede Isna','Planet Bekasi','42000');
-/*!40000 ALTER TABLE `riwayat` ENABLE KEYS */;
+-- /*!40000 ALTER TABLE `riwayat` ENABLE KEYS */;
 UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+-- /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+-- /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+-- /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+-- /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+-- /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+-- /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+-- /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+-- /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2022-12-23 23:15:17
